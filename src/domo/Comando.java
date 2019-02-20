@@ -15,8 +15,8 @@ public enum Comando {
     //2.-Sólo pueden instanciarse con un tipo de objeto concreto
     
     APAGAR_SISTEMA(0,"Apagar Sistema"),
-    CONSULTAR_HORA(1,"Consulta la hora del sistema"),
-    MODIFICAR_HORA(2,"Modifica la hora del sistema"),
+    CONSULTAR_HORA_RELOJ(1,"Consulta la hora del sistema"),
+    MODIFICAR_HORA_RELOJ(2,"Modifica la hora del sistema"),
     SUBIR_PUERTA(3,"Subir la puerta del garaje"),
     ENCENDER_LUCES_Salon(4,"Enciende las luces del Salón"),
     APAGAR_LUCES_Salon(5,"Apagar las luces del Salón"),
@@ -38,7 +38,9 @@ public enum Comando {
     SUBIR_PERSIANA_Despacho(21,"Subir Persianas Despacho"),
     BAJAR_PERSIANA_Despacho(22,"Bajar persianas Despacho"),
     SIN_ACCION(23,"no hace nada"),
-    ENCENDER_SISTEMA(24,"enciende el sistema");
+    ENCENDER_SISTEMA(24,"enciende el sistema"),
+    CONSULTAR_FECHA_RELOJ(25,"Consulta fecha del reloj"),
+    MODIFICAR_FECHA_RELOJ(26,"Modificar la fecha del reloj");
     
     
     private int codigo;

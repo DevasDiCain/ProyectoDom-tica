@@ -5,7 +5,9 @@
  */
 package domo;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,7 +15,7 @@ import java.time.LocalTime;
  */
 public class Central {
     
-   
+   private static ArrayList <Usuario> usuarios = new ArrayList();
     
     //SALON
     public void encenderLucesSalon(){
@@ -118,16 +120,23 @@ public class Central {
       Sistema system = new Sistema();
       system.setEstadoSistema(true);
   }
-            //Reloj
-
+  public static void registrarUsuario(Usuario user){
+      Central.usuarios.add(user);
+      System.out.println("Usuario registrado");
+  }
+  public static boolean comprobarUsuario(Usuario user){
+      if(Central.usuarios.contains(user)){System.out.println("Usuario Registrado");return true;}
+      else{System.out.println("Usuario No encontrado en el sistema");return false;}
+  }
+  
     public void ejecutarComando(Comando comando){
         Central centralita = new Central();
         switch (comando){
             case APAGAR_SISTEMA:centralita.apagarSistema();System.out.println("Sistema Apagado");
                 break;
-            case CONSULTAR_HORA:Reloj.mostrarHora();
+            case CONSULTAR_HORA_RELOJ:Reloj.mostrarHora();
                 break;
-            case MODIFICAR_HORA:Reloj.modificarHora(LocalTime.NOON);
+            case MODIFICAR_HORA_RELOJ:Reloj.modificarHora(LocalTime.NOON);System.out.println("Función Aún No Disponible");
                 break;
             case SUBIR_PUERTA:centralita.subirPuertaGaraje();System.out.println("Puerta Garaje Subida");
                 break;
@@ -173,6 +182,9 @@ public class Central {
                 break;
             case ENCENDER_SISTEMA:centralita.encenderSistema();System.out.println("Sistema Encendido");
                 break;
+            case CONSULTAR_FECHA_RELOJ:Reloj.mostrarFecha();
+                break;
+            case MODIFICAR_FECHA_RELOJ:Reloj.modificarFecha(LocalDate.MAX);System.out.println("Función Aún No Disponible");
         }
     }
 }

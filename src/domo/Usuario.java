@@ -11,11 +11,14 @@ package domo;
  */
 public class Usuario {
     
-    private String id;
-    private String pass;
-    private int rango;
+    private static String id;
+    private static String pass;
+    private static int rango;
     
-    public Usuario(){}
+    public Usuario(String id, String pass){
+    this.id="Devas";
+    this.pass="1234";
+    }
 
     public String getId() {
         return id;
@@ -33,15 +36,24 @@ public class Usuario {
         this.pass = pass;
     }
     
-    public void registrarUsuario(String ID , String PASS,int Rang){
-    this.id=ID;
-    this.pass=PASS;
-    this.rango=Rang;
+    public static void registrarUsuario(String ID , String PASS,int Rang){
+    Usuario.id=ID;
+    Usuario.pass=PASS;
+    Usuario.rango=Rang;
     }
-    public void modificarUsuario(String nuevaID, String nuevaPASS, int nuevoRango){
-    this.id=nuevaID;
-    this.pass=nuevaPASS;
-    this.rango=nuevoRango;
+    public static void modificarUsuario(String nuevaID, String nuevaPASS, int nuevoRango){
+    Usuario.id=nuevaID;
+    Usuario.pass=nuevaPASS;
+    Usuario.rango=nuevoRango;
     }
+              //Usuario
+  public int comprobarUsuario(Usuario user){
+      Usuario x = new Usuario("Devas","1234");
+      if(x.equals(user)==true){
+      System.out.println("La cuenta introducida es correcta");return 1;
+      }else{System.out.println("La cuenta introducida es incorrecta");}
+      return 2;
+  }
+
     
 }
