@@ -5,13 +5,15 @@
  */
 package domo;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author jose
  */
 public class Central {
     
-    
+   
     
     //SALON
     public void encenderLucesSalon(){
@@ -107,9 +109,24 @@ public class Central {
       despacho.setPersianas(false);
   }
   
-  
-  
+            //Sistema
+  public void apagarSistema(){
+      Sistema system = new Sistema();
+      system.setEstadoSistema(false);
+    }
+  public void encenderSistema(){
+      Sistema system = new Sistema();
+      system.setEstadoSistema(true);
+  }
+            //Reloj
+
     public void ejecutarComando(Comando comando){
-        
+        Central centralita = new Central();
+        switch (comando){
+            case APAGAR_SISTEMA:centralita.apagarSistema();
+                break;
+            case CONSULTAR_HORA:centralita.
+            
+        }
     }
 }

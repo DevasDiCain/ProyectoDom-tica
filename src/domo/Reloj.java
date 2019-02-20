@@ -15,8 +15,8 @@ import java.util.Date;
  */
 public class Reloj {
     
-    private LocalTime hora;//hh:mm:ss
-    private LocalDate fecha;//aaaa:
+    private static LocalTime hora;//hh:mm:ss
+    private static LocalDate fecha;//aaaa-mm-dd
 
     public Reloj(LocalTime hora, LocalDate fecha) {
         this.hora = hora;
@@ -24,21 +24,21 @@ public class Reloj {
     }
    public Reloj(){}
     
-  public void mostrarFecha(){
-      this.fecha=LocalDate.now();
-      System.out.println(this.fecha);
+  public static void mostrarFecha(){
+      Reloj.fecha=LocalDate.now();
+      System.out.println(Reloj.fecha);
   }  
   
-  public void mostrarHora(){
-      this.hora=LocalTime.now();
-      System.out.println(this.hora);
+  public static void mostrarHora(){
+      Reloj.hora=LocalTime.now();
+      System.out.println(Reloj.hora);
   }
-  public void modificarFecha(LocalDate nuevaFecha){
-      this.fecha=nuevaFecha;
+  public static void modificarFecha(LocalDate nuevaFecha){
+      Reloj.fecha=nuevaFecha;
   
   }
-  public void modificarHora(LocalTime nuevaHora){
-      this.hora=nuevaHora;
+  public static void  modificarHora(LocalTime nuevaHora){
+      Reloj.hora=nuevaHora;
   }
     public static void main(String[] args) {
         Reloj x = new Reloj();

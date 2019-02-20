@@ -14,6 +14,9 @@ public class Salon {
     private boolean Luces;
     private boolean Persianas;
     private boolean Vigilancia;
+    
+    
+    public Salon(){}
 
     public boolean isLuces() {
         return Luces;
@@ -39,6 +42,13 @@ public class Salon {
         this.Vigilancia = Vigilancia;
     }
     
-    
+    public void consusltarEstado(){
+    if (this.Luces==true){System.out.println("Las Luces están encendidas");}
+    if (this.Luces==false){System.out.println("Las Luces están apagadas");}
+    if(this.Persianas==true){System.out.println("Las Persianas están abiertas");}
+    if(this.Persianas==false){System.out.println("Las Persianas están bajadas");}
+    if(this.Vigilancia==true){System.out.println("La Vigilancia está activada");}
+    if(this.Vigilancia==false){System.out.println("La Vigilancia está desactivada");}
+    }
     
 }

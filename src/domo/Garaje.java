@@ -13,6 +13,11 @@ public class Garaje {
     
     private boolean Puerta;
 
+    
+    public Garaje(){}
+    public Garaje(boolean Puerta) {
+        this.Puerta = Puerta;
+    }   
     public boolean isPuerta() {
         return Puerta;
     }
@@ -20,6 +25,9 @@ public class Garaje {
     public void setPuerta(boolean Puerta) {
         this.Puerta = Puerta;
     }
-    
+    public void consusltarEstado(){
+        if(this.Puerta==true){System.out.println("La Puerta del Garaje está Abierta");}
+        if(this.Puerta==false){System.out.println("La Puerta del Garaje está Cerrada");}
+    }
     
 }
