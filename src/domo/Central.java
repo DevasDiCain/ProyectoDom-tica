@@ -123,10 +123,56 @@ public class Central {
     public void ejecutarComando(Comando comando){
         Central centralita = new Central();
         switch (comando){
-            case APAGAR_SISTEMA:centralita.apagarSistema();
+            case APAGAR_SISTEMA:centralita.apagarSistema();System.out.println("Sistema Apagado");
                 break;
-            case CONSULTAR_HORA:centralita.
-            
+            case CONSULTAR_HORA:Reloj.mostrarHora();
+                break;
+            case MODIFICAR_HORA:Reloj.modificarHora(LocalTime.NOON);
+                break;
+            case SUBIR_PUERTA:centralita.subirPuertaGaraje();System.out.println("Puerta Garaje Subida");
+                break;
+            case ENCENDER_LUCES_Salon:centralita.encenderLucesSalon();System.out.println("Luces Salon encendidas");
+                break;
+            case APAGAR_LUCES_Salon:centralita.apagarLucesSalon();System.out.println("Luces Salon Apagada");
+                break;
+            case ACTIVAR_VIGILANCIA_Salon:centralita.activarVigilanciaSalon();System.out.println("Vigilancia Salon Activada");
+                break;
+            case DESACTIVAR_VIGILANCIA_Salon:centralita.desactivarVigilanciaSalon();System.out.println("Vigilancia Salon Desactivada");
+                break;
+            case SUBIR_PERSIANA_Salon:centralita.subirPersianaSalon();System.out.println("Persiana Salon Subida");
+                break;
+            case BAJAR_PERSIANA_Salon:centralita.bajarPersianaSalon();System.out.println("Persiana Salon Bajada");
+                break;
+            case BAJAR_PUERTA:centralita.bajarPuertaGaraje();System.out.println("Puerta Garaje Bajada");
+                break;
+            case ENCENDER_LUCES_Dormitorio:centralita.encenderLucesDormitorio();System.out.println("Luces Dormitorio Encendidas");
+                break;
+            case APAGAR_LUCES_Dormitorio:centralita.apagarLucesDormitorio();System.out.println("Luces Dormitorio Apagadas");
+                break;
+            case ACTIVAR_VIGILANCIA_Dormitorio:centralita.activarVigilanciaDormitorio();System.out.println("Vigilancia Dormitorio Activada");
+                break;
+            case DESACTIVAR_VIGILANCIA_Dormitorio:centralita.desactivarVigilanciaDormitorio();System.out.println("Vigilancia Dormitorio Desactivada");
+                break;
+            case SUBIR_PERSIANA_Dormitorio:centralita.subirPersianaDormitorio();System.out.println("Persiana Dormitorio Subida");
+                break;
+            case BAJAR_PERSIANA_Dormitorio:centralita.bajarPersianaDormitorio();System.out.println("Persiana Dormitorio Bajada");
+                break;
+            case ENCENDER_LUCES_Despacho:centralita.encenderLucesDespacho();System.out.println("Luces Despacho Encendidas");
+                break;
+            case APAGAR_LUCES_Despacho:centralita.apagarLucesDespacho();System.out.println("Luces Despacho Apagadas");
+                break;
+            case ACTIVAR_VIGILANCIA_Despacho:centralita.activarVigilanciaDespacho();System.out.println("Vigilancia Despacho Activada");
+                break;
+            case DESACTIVAR_VIGILANCIA_Despacho:centralita.desactivarVigilanciaDespacho();System.out.println("Vigilancia Despacho Desactivada");
+                break;
+            case SUBIR_PERSIANA_Despacho:centralita.subirPersianaDespacho();System.out.println("Persiana Despacho Subida");
+                break;
+            case BAJAR_PERSIANA_Despacho:centralita.bajarPersianaDespacho();System.out.println("Persiana Despacho Bajada");
+                break;
+            case SIN_ACCION:System.out.println("No hacer nada");
+                break;
+            case ENCENDER_SISTEMA:centralita.encenderSistema();System.out.println("Sistema Encendido");
+                break;
         }
     }
 }

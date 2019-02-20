@@ -37,7 +37,8 @@ public enum Comando {
     DESACTIVAR_VIGILANCIA_Despacho(20,"Desactiva Vigilancia Despacho"),
     SUBIR_PERSIANA_Despacho(21,"Subir Persianas Despacho"),
     BAJAR_PERSIANA_Despacho(22,"Bajar persianas Despacho"),
-    SIN_ACCION(23,"no hace nada");
+    SIN_ACCION(23,"no hace nada"),
+    ENCENDER_SISTEMA(24,"enciende el sistema");
     
     
     private int codigo;
