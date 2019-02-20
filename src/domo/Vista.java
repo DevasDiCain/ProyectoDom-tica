@@ -18,23 +18,24 @@ public class Vista {
     
     public static Comando menu(){
         Scanner sn = new Scanner(System.in);
+        
         System.out.println("Bienvenido a la Centralita");
         System.out.println("---------------------------");
+      
         System.out.println("¿A qué parte de la casa desea tener acceso?");
-        System.out.println("1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho");
-        int opcion = sn.nextInt();
+        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho");
+          int opcion = sn.nextInt();
         int operacion;
-        
-        while (opcion<4 && opcion >0){
+        while (opcion<=4 && opcion >0){
         switch (opcion){
             case 1: System.out.println("¿Qué tipo de acción desea realizar en el Salón?");
-                    System.out.println("1-Encender las Luces \n 2-Apagar las luces \n "
+                    System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
                             + " \n 6-Bajar Persiana");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Salon;
-                               
+                                        
                                case 2: return Comando.APAGAR_LUCES_Salon;
                                
                                case 3: return Comando.ACTIVAR_VIGILANCIA_Salon;
@@ -60,7 +61,7 @@ public class Vista {
                      break;
                      
             case 3: System.out.println("¿Qué tipo de acción desea realizar en el Dormitorio?");
-                    System.out.println("1-Encender las Luces \n 2-Apagar las luces \n "
+                    System.out.println("\n 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
                             + " \n 6-Bajar Persiana");
                            operacion=sn.nextInt();

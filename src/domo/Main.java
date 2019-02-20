@@ -10,12 +10,10 @@ package domo;
  * @author jose
  */
 public class Main {
-    
+
     public static void main(String[] args) {
         Central centralita = new Central();
         centralita.ejecutarComando(Vista.menu());
     }
-    
-    
-  
+
 }
