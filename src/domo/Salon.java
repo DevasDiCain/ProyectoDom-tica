@@ -10,7 +10,7 @@ package domo;
  * @author jose
  */
 public class Salon {
-    
+        //Estado de las Luces,Persianas y Vigilancia.
     private boolean Luces;
     private boolean Persianas;
     private boolean Vigilancia;
