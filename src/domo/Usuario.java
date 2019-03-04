@@ -5,15 +5,17 @@
  */
 package domo;
 
+import java.util.Objects;
+
 /**
  *
  * @author jose
  */
 public class Usuario {
     
-    private static String id;
-    private static String pass;
-    private static int rango;
+    private  String id;
+    private  String pass;
+    private  int rango;
     
     public Usuario(String id, String pass){
     this.id="Devas";
@@ -36,15 +38,15 @@ public class Usuario {
         this.pass = pass;
     }
     
-    public static void registrarUsuario(String ID , String PASS,int Rang){
-    Usuario.id=ID;
-    Usuario.pass=PASS;
-    Usuario.rango=Rang;
+    public  void registrarUsuario(String ID , String PASS,int Rang){
+    this.id=ID;
+    this.pass=PASS;
+    this.rango=Rang;
     }
-    public static void modificarUsuario(String nuevaID, String nuevaPASS, int nuevoRango){
-    Usuario.id=nuevaID;
-    Usuario.pass=nuevaPASS;
-    Usuario.rango=nuevoRango;
+    public  void modificarUsuario(String nuevaID, String nuevaPASS, int nuevoRango){
+   this.id=nuevaID;
+    this.pass=nuevaPASS;
+    this.rango=nuevoRango;
     }
               //Usuario
   public int comprobarUsuario(Usuario user){
@@ -54,6 +56,39 @@ public class Usuario {
       }else{System.out.println("La cuenta introducida es incorrecta");}
       return 2;
   }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 47 * hash + Objects.hashCode(this.pass);
+        hash = 47 * hash + this.rango;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if (this.rango != other.rango) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.pass, other.pass)) {
+            return false;
+        }
+        return true;
+    }
 
     
 }

@@ -9,6 +9,6 @@ package domo;
  *
  * @author jose
  */
-public class Dormitorio extends Estancias {
-    public Orientacion orientacion;
+public enum Orientacion {
+    NORTE,SUR,ESTE,OESTE;
 }

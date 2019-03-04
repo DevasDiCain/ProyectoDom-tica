@@ -9,25 +9,42 @@ package domo;
  *
  * @author jose
  */
-public class Garaje {
+//Hereda de estancias
+public class Garaje extends Estancias {
     
-    private boolean Puerta;
+    private PuertaAutomatica Puerta;
+    private int capacidadVehiculos;
+    
 
     
-    public Garaje(){}
-    public Garaje(boolean Puerta) {
+    public Garaje(){
+        super();
+        this.capacidadVehiculos=0;
+        this.Puerta= new PuertaAutomatica();
+    }
+    public Garaje(PuertaAutomatica Puerta) {
         this.Puerta = Puerta;
     }   
-    public boolean isPuerta() {
+    public PuertaAutomatica isPuerta() {
         return Puerta;
     }
 
-    public void setPuerta(boolean Puerta) {
+    public void setPuerta(PuertaAutomatica Puerta) {
         this.Puerta = Puerta;
     }
     public void consusltarEstado(){
-        if(this.Puerta==true){System.out.println("La Puerta del Garaje está Abierta");}
-        if(this.Puerta==false){System.out.println("La Puerta del Garaje está Cerrada");}
+        if(this.Puerta.isEstado()==true){System.out.println("La Puerta del Garaje está Abierta");}
+        if(this.Puerta.isEstado()==false){System.out.println("La Puerta del Garaje está Cerrada");}
+    }
+    public Garaje (int capacidadVehiculos , PuertaAutomatica Puerta, int m2){
+    super(m2);
+    this.capacidadVehiculos=0;
+    this.Puerta= new PuertaAutomatica();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Garaje{" + "Puerta=" + Puerta + ", capacidadVehiculos=" + capacidadVehiculos + '}';
     }
     
 }

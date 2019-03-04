@@ -31,7 +31,7 @@ public class Vista {
        
         if( user1.comprobarUsuario(user1)==1){
         System.out.println("¿A qué parte de la casa desea tener acceso?");
-        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj");
+        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj");
           int opcion = sn.nextInt();
         int operacion;
         while (opcion<=5 && opcion >0){
@@ -68,23 +68,23 @@ public class Vista {
                            }
                      break;
                      
-            case 3: System.out.println("¿Qué tipo de acción desea realizar en el Dormitorio?");
+            case 3: System.out.println("¿Qué tipo de acción desea realizar en el Habitacion?");
                     System.out.println("\n 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
                             + " \n 6-Bajar Persiana");
                            operacion=sn.nextInt();
                            switch(operacion){
-                               case 1: return Comando.ENCENDER_LUCES_Dormitorio;
+                               case 1: return Comando.ENCENDER_LUCES_Habitacion;
                                
-                               case 2: return Comando.APAGAR_LUCES_Dormitorio;
+                               case 2: return Comando.APAGAR_LUCES_Habitacion;
                                
-                               case 3: return Comando.ACTIVAR_VIGILANCIA_Dormitorio;
+                               case 3: return Comando.ACTIVAR_VIGILANCIA_Habitacion;
                                
-                               case 4: return Comando.DESACTIVAR_VIGILANCIA_Dormitorio;
+                               case 4: return Comando.DESACTIVAR_VIGILANCIA_Habitacion;
                                
-                               case 5: return Comando.SUBIR_PERSIANA_Dormitorio;
+                               case 5: return Comando.SUBIR_PERSIANA_Habitacion;
                                
-                               case 6: return Comando.BAJAR_PERSIANA_Dormitorio;
+                               case 6: return Comando.BAJAR_PERSIANA_Habitacion;
                            
                            }
                      break;

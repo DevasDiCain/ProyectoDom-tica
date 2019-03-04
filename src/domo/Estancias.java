@@ -11,4 +11,26 @@ package domo;
  */
 public class Estancias {
     private double m2;
+    
+    public Estancias(){
+    m2 = 0;
+    }
+    public Estancias(int m2){
+    this.m2=m2;
+    }
+
+    public double getM2() {
+        return m2;
+    }
+
+    public void setM2(double m2) {
+        this.m2 = m2;
+    }
+
+    @Override
+    public String toString() {
+        return "Estancias{" + "m2=" + m2 + '}';
+    }
+    
 }
+
