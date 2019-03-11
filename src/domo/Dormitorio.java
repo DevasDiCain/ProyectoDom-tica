@@ -11,4 +11,8 @@ package domo;
  */
 public class Dormitorio extends Estancias {
     public Orientacion orientacion;
+    private Luz  Luces;
+    private Persiana  Persianas;
+    private Vigilancia camara;
+    
 }

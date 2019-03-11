@@ -14,6 +14,12 @@ public class Persiana {
     private int largo;
     private int ancho;
 
+    public Persiana(boolean estado, int largo, int ancho) {
+        this.estado = estado;
+        this.largo = largo;
+        this.ancho = ancho;
+    }
+
     public boolean getEstado() {
         return estado;
     }

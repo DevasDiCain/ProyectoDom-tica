@@ -13,6 +13,12 @@ public class Vigilancia {
     private boolean estado;
     private String ip;// Dirección ip de la camara
 
+    public Vigilancia(boolean estado, String ip) {
+        this.estado = estado;
+        this.ip = ip;
+    }
+    
+
     public boolean getEstado() {
         return estado;
     }

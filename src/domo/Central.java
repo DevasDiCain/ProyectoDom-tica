@@ -61,32 +61,32 @@ public class Central {
 
     //Habitacion
     public void encenderLucesHabitacion() {
-        Habitacion habitacion = new Habitacion();
+        HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.getLuces().get(0).setEstado(true);
     }
 
     public void apagarLucesHabitacion() {
-         Habitacion habitacion = new Habitacion();
+         HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.getLuces().get(0).setEstado(false);
     }
 
     public void activarVigilanciaHabitacion() {
-         Habitacion habitacion = new Habitacion();
+         HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.isVigilancia().setEstado(true);
     }
 
     public void desactivarVigilanciaHabitacion() {
-        Habitacion habitacion = new Habitacion();
+        HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.isVigilancia().setEstado(false);
     }
 
     public void subirPersianaHabitacion() {
-         Habitacion habitacion = new Habitacion();
+         HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.isPersianas().setEstado(true);
     }
 
     public void bajarPersianaHabitacion() {
-       Habitacion habitacion = new Habitacion();
+       HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.isPersianas().setEstado(false);
     }
 

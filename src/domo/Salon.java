@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Salon {
+public class Salon extends HabitacionesGenericas {
         //Estado de las Luces,Persianas y Vigilancia.
     private boolean Luces;
     private boolean Persianas;

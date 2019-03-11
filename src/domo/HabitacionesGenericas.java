@@ -11,25 +11,32 @@ import java.util.ArrayList;
  *
  * @author jose
  */
-public class Habitacion extends Estancias {
+public class HabitacionesGenericas extends Estancias {
     
-    private ArrayList<Luz> Luces;
+    private Luz Luces;
     private Persiana Persianas;
-    private Vigilancia Vigilancia;
-    
-    
-    
-    public Habitacion(){}
+    private Vigilancia camara;
 
-    public ArrayList<Luz> getLuces() {
+    public HabitacionesGenericas(int m2) {
+        super(m2);
+        this.Luces=new Luz(false,10.0);
+        this.Persianas=new Persiana(false,3,2);
+        this.camara=new Vigilancia(false,"1");
+    }
+    
+    
+    
+   
+
+    public Luz getLuces() {
       return this.Luces;
     }
 
-    public void setLuces(ArrayList<Luz> Luces) {
+    public void setLuces(Luz Luces) {
         this.Luces = Luces;
     }
 
-    public Persiana isPersianas() {
+    public Persiana getPersianas() {
         return Persianas;
     }
 
@@ -37,23 +44,13 @@ public class Habitacion extends Estancias {
         this.Persianas = Persianas;
     }
 
-    public Vigilancia isVigilancia() {
-        return Vigilancia;
+    public Vigilancia getVigilancia() {
+        return camara;
     }
 
     public void setVigilancia(Vigilancia Vigilancia) {
-        this.Vigilancia = Vigilancia;
+        this.camara = Vigilancia;
     }
 
-    public void consusltarEstado(){
-        for (int i = 0 ; i < this.Luces.size(); i++){
-    if (this.Luces.get(i).isEstado()==true){System.out.println("Las Luces están encendidas");}
-    if (this.Luces.get(i).isEstado()==false){System.out.println("Las Luces están apagadas");}
     
-        }
-    if(this.Persianas.isEstado()==true){System.out.println("Las Persianas están abiertas");}
-    if(this.Persianas.isEstado()==false){System.out.println("Las Persianas están bajadas");}
-    if(this.Vigilancia.isEstado()==true){System.out.println("La Vigilancia está activada");}
-    if(this.Vigilancia.isEstado()==false){System.out.println("La Vigilancia está desactivada");}
-    }
 }

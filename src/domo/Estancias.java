@@ -12,9 +12,7 @@ package domo;
 public class Estancias {
     private double m2;
     
-    public Estancias(){
-    m2 = 0;
-    }
+
     public Estancias(int m2){
     this.m2=m2;
     }
