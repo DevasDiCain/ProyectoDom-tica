@@ -13,7 +13,7 @@ public class Vigilancia {
     private boolean estado;
     private String ip;// Dirección ip de la camara
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

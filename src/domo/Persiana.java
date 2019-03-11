@@ -14,7 +14,7 @@ public class Persiana {
     private int largo;
     private int ancho;
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

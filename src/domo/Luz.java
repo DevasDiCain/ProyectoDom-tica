@@ -14,7 +14,7 @@ public class Luz {
     private boolean estado;
     private double consumo;
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

@@ -5,49 +5,29 @@
  */
 package domo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jose
  */
 public class Despacho {
-     private boolean Luces;
-    private boolean Persianas;
-    private boolean Vigilancia;
-    
-    
-    
-    public Despacho(){}
+     private Luz  Luces;
+    private Persiana  Persianas;
+    private Vigilancia camara;
 
-    public boolean isLuces() {
-        return Luces;
-    }
-
-    public void setLuces(boolean Luces) {
+    public Despacho(Luz Luces, Persiana Persianas, Vigilancia camara) {
         this.Luces = Luces;
-    }
-
-    public boolean isPersianas() {
-        return Persianas;
-    }
-
-    public void setPersianas(boolean Persianas) {
         this.Persianas = Persianas;
-    }
-
-    public boolean isVigilancia() {
-        return Vigilancia;
-    }
-
-    public void setVigilancia(boolean Vigilancia) {
-        this.Vigilancia = Vigilancia;
+        this.camara = camara;
     }
 
     public void consusltarEstado(){
-    if (this.Luces==true){System.out.println("Las Luces están encendidas");}
-    if (this.Luces==false){System.out.println("Las Luces están apagadas");}
-    if(this.Persianas==true){System.out.println("Las Persianas están abiertas");}
-    if(this.Persianas==false){System.out.println("Las Persianas están bajadas");}
-    if(this.Vigilancia==true){System.out.println("La Vigilancia está activada");}
-    if(this.Vigilancia==false){System.out.println("La Vigilancia está desactivada");}
+    if (this.Luces.getEstado()==true){System.out.println("Las Luces están encendidas");}
+    if (this.Luces.getEstado()==false){System.out.println("Las Luces están apagadas");}
+    if(this.Persianas.getEstado()==true){System.out.println("Las Persianas están abiertas");}
+    if(this.Persianas.getEstado()==false){System.out.println("Las Persianas están bajadas");}
+    if(this.camara.getEstado()==true){System.out.println("La Vigilancia está activada");}
+    if(this.camara.getEstado()==false){System.out.println("La Vigilancia está desactivada");}
     }
 }
