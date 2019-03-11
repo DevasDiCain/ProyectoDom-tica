@@ -11,44 +11,68 @@ package domo;
  */
 public class Salon extends HabitacionesGenericas {
         //Estado de las Luces,Persianas y Vigilancia.
-    private boolean Luces;
-    private boolean Persianas;
-    private boolean Vigilancia;
+    private Luz Luces;
+    private Persiana Persianas;
+    private Vigilancia Camara;
     
     
-    public Salon(){}
+    public Salon(int m2) {
+        super(m2);
+        this.Luces = new Luz(false,10.0);
+        this.Persianas = new Persiana(false,3,2);
+        this.Camara = new Vigilancia(false,"1");
+    }
 
-    public boolean isLuces() {
+    public Luz getLuces() {
         return Luces;
     }
 
-    public void setLuces(boolean Luces) {
+    public void setLuces(Luz Luces) {
         this.Luces = Luces;
     }
 
-    public boolean isPersianas() {
+    public Persiana getPersianas() {
         return Persianas;
     }
 
-    public void setPersianas(boolean Persianas) {
+    public void setPersianas(Persiana Persianas) {
         this.Persianas = Persianas;
     }
 
-    public boolean isVigilancia() {
-        return Vigilancia;
+    public Vigilancia getCamara() {
+        return Camara;
     }
 
-    public void setVigilancia(boolean Vigilancia) {
-        this.Vigilancia = Vigilancia;
+    public void setCamara(Vigilancia Camara) {
+        this.Camara = Camara;
+    }
+
+  public void consusltarEstado() {
+
+        if (this.Luces.getEstado() == true) {
+            System.out.println("Las Luces están encendidas");
+        } else {
+            System.out.println("Las Luces están apagadas");
+        }
+
+        if (this.Persianas.getEstado()
+                == true) {
+            System.out.println("Las Persianas están abiertas");
+        } else {
+            System.out.println("Las Persianas están bajadas");
+        }
+
+        if (this.Camara.getEstado()
+                == true) {
+            System.out.println("La Vigilancia está activada");
+        } else {
+            System.out.println("La Vigilancia está desactivada");
+        }
     }
     
-    public void consusltarEstado(){
-    if (this.Luces==true){System.out.println("Las Luces están encendidas");}
-    if (this.Luces==false){System.out.println("Las Luces están apagadas");}
-    if(this.Persianas==true){System.out.println("Las Persianas están abiertas");}
-    if(this.Persianas==false){System.out.println("Las Persianas están bajadas");}
-    if(this.Vigilancia==true){System.out.println("La Vigilancia está activada");}
-    if(this.Vigilancia==false){System.out.println("La Vigilancia está desactivada");}
+    public static void main(String[] args) {
+        Salon x = new Salon(10);
+        x.consusltarEstado();
     }
     
 }
