@@ -10,58 +10,58 @@ package domo;
  * @author jose
  */
 public class Salon extends HabitacionesGenericas {
-        //Estado de las Luces,Persianas y Vigilancia.
+    //Estado de las Luces,Persianas y Vigilancia.
+
     private Luz Luces;
     private Persiana Persianas;
     private Vigilancia Camara;
     
-    
     public Salon(int m2) {
         super(m2);
-        this.Luces = new Luz(false,10.0);
-        this.Persianas = new Persiana(false,3,2);
-        this.Camara = new Vigilancia(false,"1");
+        this.Luces = new Luz(false, 10.0);
+        this.Persianas = new Persiana(false, 3, 2);
+        this.Camara = new Vigilancia(false, "1");
     }
-
+    
     public Luz getLuces() {
         return Luces;
     }
-
+    
     public void setLuces(Luz Luces) {
         this.Luces = Luces;
     }
-
+    
     public Persiana getPersianas() {
         return Persianas;
     }
-
+    
     public void setPersianas(Persiana Persianas) {
         this.Persianas = Persianas;
     }
-
+    
     public Vigilancia getCamara() {
         return Camara;
     }
-
+    
     public void setCamara(Vigilancia Camara) {
         this.Camara = Camara;
     }
-
-  public void consusltarEstado() {
-
+    
+    public void consusltarEstado() {
+        
         if (this.Luces.getEstado() == true) {
             System.out.println("Las Luces están encendidas");
         } else {
             System.out.println("Las Luces están apagadas");
         }
-
+        
         if (this.Persianas.getEstado()
                 == true) {
             System.out.println("Las Persianas están abiertas");
         } else {
             System.out.println("Las Persianas están bajadas");
         }
-
+        
         if (this.Camara.getEstado()
                 == true) {
             System.out.println("La Vigilancia está activada");
@@ -69,7 +69,31 @@ public class Salon extends HabitacionesGenericas {
             System.out.println("La Vigilancia está desactivada");
         }
     }
-    
+
+    public void encenderLuces() {
+        this.Luces.setEstado(true);
+    }
+
+    public void apagarLuces() {
+        this.Luces.setEstado(false);
+    }
+
+    public void subirPersiana() {
+        this.Persianas.setEstado(true);
+    }
+
+    public void bajarPersiana() {
+        this.Persianas.setEstado(false);
+    }
+
+    public void encenderVigilancia() {
+        this.Camara.setEstado(true);
+    }
+
+    public void apagarVigilancia() {
+        this.Camara.setEstado(false);
+    }
+
     public static void main(String[] args) {
         Salon x = new Salon(10);
         x.consusltarEstado();

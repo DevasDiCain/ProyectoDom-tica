@@ -16,36 +16,42 @@ import java.util.ArrayList;
 public class Central {
 
     private static ArrayList<Usuario> usuarios = new ArrayList();
+    private Salon salon;
+    private Despacho despacho;
+    private Dormitorio dormitorio;
+    private Garaje garaje;
 
+    public Central() {
+        this.salon = new Salon(10);
+        this.despacho = new Despacho(10);
+        this.dormitorio = new Dormitorio (10);
+        this.garaje = new Garaje();
+    }
+ 
+    
     //SALON
     public void encenderLucesSalon() {
-        Salon salon = new Salon();
-        salon.setLuces(true);
+        salon.encenderLuces();
     }
 
     public void apagarLucesSalon() {
-        Salon salon = new Salon();
-        salon.setLuces(false);
+        salon.apagarLuces();
     }
 
     public void activarVigilanciaSalon() {
-        Salon salon = new Salon();
-        salon.setVigilancia(true);
+        salon.apagarVigilancia();
     }
 
     public void desactivarVigilanciaSalon() {
-        Salon salon = new Salon();
-        salon.setVigilancia(false);
+        salon.apagarVigilancia();
     }
 
     public void subirPersianaSalon() {
-        Salon salon = new Salon();
-        salon.setPersianas(true);
+        salon.subirPersiana();
     }
 
     public void bajarPersianaSalon() {
-        Salon salon = new Salon();
-        salon.setPersianas(false);
+        salon.bajarPersiana();
     }
 
     //GARAJE
