@@ -17,14 +17,12 @@ public class Garaje extends Estancias {
     
 
     
-    public Garaje(){
-        super();
+    public Garaje(int m2){
+        super(m2);
         this.capacidadVehiculos=0;
         this.Puerta= new PuertaAutomatica();
     }
-    public Garaje(PuertaAutomatica Puerta) {
-        this.Puerta = Puerta;
-    }   
+    
     public PuertaAutomatica isPuerta() {
         return Puerta;
     }
@@ -33,14 +31,19 @@ public class Garaje extends Estancias {
         this.Puerta = Puerta;
     }
     public void consusltarEstado(){
-        if(this.Puerta.isEstado()==true){System.out.println("La Puerta del Garaje está Abierta");}
-        if(this.Puerta.isEstado()==false){System.out.println("La Puerta del Garaje está Cerrada");}
+        if(this.Puerta.getEstado()==true){System.out.println("La Puerta del Garaje está Abierta");}
+        if(this.Puerta.getEstado()==false){System.out.println("La Puerta del Garaje está Cerrada");}
     }
-    public Garaje (int capacidadVehiculos , PuertaAutomatica Puerta, int m2){
-    super(m2);
-    this.capacidadVehiculos=0;
-    this.Puerta= new PuertaAutomatica();
+   public void abrirPuerta(){
+       if(this.Puerta.getEstado()==false){
+           this.Puerta.setEstado(true);
+       }else {System.out.println("La puerta ya está abierta");}
     }
+   public void cerrarPuerta(){
+       if(this.Puerta.getEstado()==true){
+           this.Puerta.setEstado(false);
+       }else {System.out.println("La puerta ya está cerrada");}
+   }
 
     @Override
     public String toString() {

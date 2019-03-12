@@ -13,7 +13,7 @@ public class PuertaAutomatica {
     private boolean estado;
     private int retardo;//segundos
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 

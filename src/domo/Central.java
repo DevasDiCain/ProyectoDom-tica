@@ -25,7 +25,7 @@ public class Central {
         this.salon = new Salon(10);
         this.despacho = new Despacho(10);
         this.dormitorio = new Dormitorio (10);
-        this.garaje = new Garaje();
+        this.garaje = new Garaje(10);
     }
  
     
@@ -56,27 +56,23 @@ public class Central {
 
     //GARAJE
     public void subirPuertaGaraje() {
-        Garaje garaje = new Garaje();
-        garaje.isPuerta().setEstado(true);
+        garaje.abrirPuerta();
     }
 
     public void bajarPuertaGaraje() {
-        Garaje garaje = new Garaje();
-        garaje.isPuerta().setEstado(false);
+        garaje.cerrarPuerta();
     }
 
-    //Habitacion
-    public void encenderLucesHabitacion() {
-        HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.getLuces().get(0).setEstado(true);
+    //Dormitorio
+    public void encenderLucesDormitorio() {
+        dormitorio.encenderLuces();
     }
 
-    public void apagarLucesHabitacion() {
-         HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.getLuces().get(0).setEstado(false);
+    public void apagarLucesDormitorio() {
+        dormitorio.apagarLuces();
     }
 
-    public void activarVigilanciaHabitacion() {
+    public void activarVigilanciaDormitorio() {
          HabitacionesGenericas habitacion = new HabitacionesGenericas();
         habitacion.isVigilancia().setEstado(true);
     }
