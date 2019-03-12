@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-          Scanner sn = new Scanner(System.in);
+        Scanner sn = new Scanner(System.in);
           Central centralita = new Central();
         System.out.println("!Bienvenido al registro¡");
         System.out.println("Introduzca su nuevo Usuario");
@@ -22,16 +22,9 @@ public class Main {
         String a=sn.nextLine();
         Usuario usuariox = new Usuario(u,a);
         Central.registrarUsuario(usuariox);
+        Central.comprobarUsuario(usuariox);
         Comando comando =Vista.menu();
         centralita.ejecutarComando(comando);
         
-        
-       
     }
-        
-        
-    
-    
-    
-
-
+}

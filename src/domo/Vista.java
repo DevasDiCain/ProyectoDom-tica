@@ -29,7 +29,7 @@ public class Vista {
         String pass= sn.nextLine();
         Usuario user1 = new Usuario(usuario,pass);
        
-        if( user1.comprobarUsuario(user1)==1){
+        if( Central.comprobarUsuario(user1)==1){
         System.out.println("¿A qué parte de la casa desea tener acceso?");
         System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj");
           int opcion = sn.nextInt();
@@ -74,17 +74,17 @@ public class Vista {
                             + " \n 6-Bajar Persiana");
                            operacion=sn.nextInt();
                            switch(operacion){
-                               case 1: return Comando.ENCENDER_LUCES_Habitacion;
+                               case 1: return Comando.ENCENDER_LUCES_Dormitorio;
                                
-                               case 2: return Comando.APAGAR_LUCES_Habitacion;
+                               case 2: return Comando.APAGAR_LUCES_Dormitorio;
                                
-                               case 3: return Comando.ACTIVAR_VIGILANCIA_Habitacion;
+                               case 3: return Comando.ACTIVAR_VIGILANCIA_Dormitorio;
                                
-                               case 4: return Comando.DESACTIVAR_VIGILANCIA_Habitacion;
+                               case 4: return Comando.DESACTIVAR_VIGILANCIA_Dormitorio;
                                
-                               case 5: return Comando.SUBIR_PERSIANA_Habitacion;
+                               case 5: return Comando.SUBIR_PERSIANA_Dormitorio;
                                
-                               case 6: return Comando.BAJAR_PERSIANA_Habitacion;
+                               case 6: return Comando.BAJAR_PERSIANA_Dormitorio;
                            
                            }
                      break;
@@ -122,7 +122,7 @@ public class Vista {
                     }
                     break;
         }
-        } else if(user1.comprobarUsuario(user1)==2){
+        } else if(Central.comprobarUsuario(user1)==2){
             System.out.println("Introduzca sus credenciales");
         System.out.println("¿Usuario?");
         String usuario1 =sn.nextLine();

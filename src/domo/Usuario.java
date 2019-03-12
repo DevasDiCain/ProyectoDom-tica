@@ -18,8 +18,8 @@ public class Usuario {
     private  int rango;
     
     public Usuario(String id, String pass){
-    this.id="Devas";
-    this.pass="1234";
+    this.id=id;
+    this.pass=pass;
     }
 
     public String getId() {
@@ -38,24 +38,6 @@ public class Usuario {
         this.pass = pass;
     }
     
-    public  void registrarUsuario(String ID , String PASS,int Rang){
-    this.id=ID;
-    this.pass=PASS;
-    this.rango=Rang;
-    }
-    public  void modificarUsuario(String nuevaID, String nuevaPASS, int nuevoRango){
-   this.id=nuevaID;
-    this.pass=nuevaPASS;
-    this.rango=nuevoRango;
-    }
-              //Usuario
-  public int comprobarUsuario(Usuario user){
-      Usuario x = new Usuario("Devas","1234");
-      if(x.equals(user)==true){
-      System.out.println("La cuenta introducida es correcta");return 1;
-      }else{System.out.println("La cuenta introducida es incorrecta");}
-      return 2;
-  }
 
     @Override
     public int hashCode() {

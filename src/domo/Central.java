@@ -122,7 +122,8 @@ public class Central {
     public void encenderSistema() {
        this.system.setEstadoSistema(true);
     }
-
+    
+    //Usuarios
     public static void registrarUsuario(Usuario user) {
         usuarios.add(user);
         System.out.println("Usuario registrado");
