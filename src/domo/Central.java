@@ -20,15 +20,16 @@ public class Central {
     private Despacho despacho;
     private Dormitorio dormitorio;
     private Garaje garaje;
+    private Sistema system;
 
     public Central() {
         this.salon = new Salon(10);
         this.despacho = new Despacho(10);
-        this.dormitorio = new Dormitorio (10);
+        this.dormitorio = new Dormitorio(10);
         this.garaje = new Garaje(10);
+        this.system= new Sistema();
     }
- 
-    
+
     //SALON
     public void encenderLucesSalon() {
         salon.encenderLuces();
@@ -73,86 +74,74 @@ public class Central {
     }
 
     public void activarVigilanciaDormitorio() {
-         HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.isVigilancia().setEstado(true);
+        dormitorio.activarVigilancia();
     }
 
-    public void desactivarVigilanciaHabitacion() {
-        HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.isVigilancia().setEstado(false);
+    public void desactivarVigilanciaDormitorio() {
+        dormitorio.desactivarVigilancia();
     }
 
-    public void subirPersianaHabitacion() {
-         HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.isPersianas().setEstado(true);
+    public void subirPersianaDormitorio() {
+        dormitorio.subirPersianas();
     }
 
-    public void bajarPersianaHabitacion() {
-       HabitacionesGenericas habitacion = new HabitacionesGenericas();
-        habitacion.isPersianas().setEstado(false);
+    public void bajarPersianaDormitorio() {
+        dormitorio.bajarPersianas();
     }
 
     //Despacho
     public void encenderLucesDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setLuces(true);
+        despacho.encenderLuces();
     }
 
     public void apagarLucesDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setLuces(false);
+        despacho.apagarLuces();
     }
 
     public void activarVigilanciaDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setVigilancia(true);
+        despacho.activarVigilancia();
     }
 
     public void desactivarVigilanciaDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setVigilancia(false);
+        despacho.desactivarVigilancia();
     }
 
     public void subirPersianaDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setPersianas(true);
+       despacho.subirPersianas();
     }
 
     public void bajarPersianaDespacho() {
-        Despacho despacho = new Despacho();
-        despacho.setPersianas(false);
+        despacho.bajarPersianas();
     }
 
     //Sistema
     public void apagarSistema() {
-        Sistema system = new Sistema();
-        system.setEstadoSistema(false);
+        this.system.setEstadoSistema(false);
     }
 
     public void encenderSistema() {
-        Sistema system = new Sistema();
-        system.setEstadoSistema(true);
+       this.system.setEstadoSistema(true);
     }
 
-   public static void registrarUsuario(Usuario user) {
-      Central.usuarios.add(user);
-        Central.usuarios.add(user);
-      System.out.println("Usuario registrado");
+    public static void registrarUsuario(Usuario user) {
+        usuarios.add(user);
+        System.out.println("Usuario registrado");
         System.out.println(Central.usuarios.size());
-  }
-        
-  
+    }
 
     public static int comprobarUsuario(Usuario user) {
-        for (int i = 0; i < Central.usuarios.size(); i++) {
-            if (Central.usuarios.get(i).equals(user)) {
-                System.out.println("Usuario ingresado correctamente"); return 1;
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).equals(user)) {
+                System.out.println("Usuario ingresado correctamente");
+                return 1;
             } else {
-                System.out.println("Usuario/Contraseña incorrecta");return-2;
+                System.out.println("Usuario/Contraseña incorrecta");
+                return -2;
             }
         }
         return -1;
     }
+
     public void ejecutarComando(Comando comando) {
         Central centralita = new Central();
         switch (comando) {
@@ -199,29 +188,29 @@ public class Central {
                 centralita.bajarPuertaGaraje();
                 System.out.println("Puerta Garaje Bajada");
                 break;
-            case ENCENDER_LUCES_Habitacion:
-                centralita.encenderLucesHabitacion();
-                System.out.println("Luces Habitacion Encendidas");
+            case ENCENDER_LUCES_Dormitorio:
+                centralita.encenderLucesDormitorio();
+                System.out.println("Luces Dormitorio Encendidas");
                 break;
-            case APAGAR_LUCES_Habitacion:
-                centralita.apagarLucesHabitacion();
-                System.out.println("Luces Habitacion Apagadas");
+            case APAGAR_LUCES_Dormitorio:
+                centralita.apagarLucesDormitorio();
+                System.out.println("Luces Dormitorio Apagadas");
                 break;
-            case ACTIVAR_VIGILANCIA_Habitacion:
-                centralita.activarVigilanciaHabitacion();
-                System.out.println("Vigilancia Habitacion Activada");
+            case ACTIVAR_VIGILANCIA_Dormitorio:
+                centralita.activarVigilanciaDormitorio();
+                System.out.println("Vigilancia Dormitorio Activada");
                 break;
-            case DESACTIVAR_VIGILANCIA_Habitacion:
-                centralita.desactivarVigilanciaHabitacion();
-                System.out.println("Vigilancia Habitacion Desactivada");
+            case DESACTIVAR_VIGILANCIA_Dormitorio:
+                centralita.desactivarVigilanciaDormitorio();
+                System.out.println("Vigilancia Dormitorio Desactivada");
                 break;
-            case SUBIR_PERSIANA_Habitacion:
-                centralita.subirPersianaHabitacion();
-                System.out.println("Persiana Habitacion Subida");
+            case SUBIR_PERSIANA_Dormitorio:
+                centralita.subirPersianaDormitorio();
+                System.out.println("Persiana Dormitorio Subida");
                 break;
-            case BAJAR_PERSIANA_Habitacion:
-                centralita.bajarPersianaHabitacion();
-                System.out.println("Persiana Habitacion Bajada");
+            case BAJAR_PERSIANA_Dormitorio:
+                centralita.bajarPersianaDormitorio();
+                System.out.println("Persiana Dormitorio Bajada");
                 break;
             case ENCENDER_LUCES_Despacho:
                 centralita.encenderLucesDespacho();
@@ -263,6 +252,3 @@ public class Central {
         }
     }
 }
-
-  
-    
