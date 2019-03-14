@@ -20,7 +20,7 @@ public class HabitacionesGenericas extends Estancias {
     public HabitacionesGenericas(int m2) {
         super(m2);
         this.Luces=new Luz(false,10.0);
-        this.Persianas=new Persiana(false,3,2);
+        this.Persianas=new Persiana(3,2,posicionPersiana.BAJADA);
         this.camara=new Vigilancia(false,"1");
     }
     
@@ -59,8 +59,8 @@ public class HabitacionesGenericas extends Estancias {
             System.out.println("Las Luces están apagadas");
         }
 
-        if (this.Persianas.getEstado()
-                == true) {
+        if (this.Persianas.getPosicion()
+                == posicionPersiana.ABIERTA) {
             System.out.println("Las Persianas están abiertas");
         } else {
             System.out.println("Las Persianas están bajadas");

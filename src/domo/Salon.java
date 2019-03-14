@@ -18,9 +18,6 @@ public class Salon extends HabitacionesGenericas {
     
     public Salon(int m2) {
         super(m2);
-        this.Luces = new Luz(false, 10.0);
-        this.Persianas = new Persiana(false, 3, 2);
-        this.Camara = new Vigilancia(false, "1");
     }
     
     public Luz getLuces() {
@@ -47,9 +44,27 @@ public class Salon extends HabitacionesGenericas {
         this.Camara = Camara;
     }
   
-    public static void main(String[] args) {
-        Salon x = new Salon(10);
-        x.consusltarEstado();
+    public void consusltarEstado() {
+
+        if (super.getLuces().getEstado()) {
+            System.out.println("Las Luces están encendidas");
+        } else {
+            System.out.println("Las Luces están apagadas");
+        }
+
+        if (super.getLuces().getEstado()
+                == true) {
+            System.out.println("Las Persianas están abiertas");
+        } else {
+            System.out.println("Las Persianas están bajadas");
+        }
+
+        if (super.getVigilancia().getEstado()
+                == true) {
+            System.out.println("La Vigilancia está activada");
+        } else {
+            System.out.println("La Vigilancia está desactivada");
+        }
     }
     
 }

@@ -17,14 +17,28 @@ public class Dormitorio extends HabitacionesGenericas {
         super(m2);
         this.orientacion = orientacion;      
     }
+    public void consusltarEstado() {
 
-    
+        if (super.getLuces().getEstado()) {
+            System.out.println("Las Luces están encendidas");
+        } else {
+            System.out.println("Las Luces están apagadas");
+        }
 
-    public static void main(String[] args) {
-        Dormitorio x = new Dormitorio(10);
-        x.consusltarEstado();
+        if (super.getLuces().getEstado()
+                == true) {
+            System.out.println("Las Persianas están abiertas");
+        } else {
+            System.out.println("Las Persianas están bajadas");
+        }
+
+        if (super.getVigilancia().getEstado()
+                == true) {
+            System.out.println("La Vigilancia está activada");
+        } else {
+            System.out.println("La Vigilancia está desactivada");
+        }
     }
     
-    
-    
+
 }

@@ -56,27 +56,23 @@ public class Central {
     }
 
     public void subirPersianaSalon() {
-        if(salon.getPersianas().getEstado()==false){
-        salon.getPersianas().subirPersianas();
-        }else {System.out.println("Las persianas ya están subidas");}
+        this.salon.getPersianas().subirPersianas();
     }
 
     public void bajarPersianaSalon() {
-        if(salon.getPersianas().getEstado()==true){
-        salon.getPersianas().bajarPersianas();
-        } else{System.out.println("Las persianas ya están bajadas");}
+        this.salon.getPersianas().bajarPersianas();
     }
 
     //GARAJE
     public void subirPuertaGaraje() {
         if(garaje.getPuerta().getEstado()==false){
-        garaje.abrirPuerta();
+        garaje.getPuerta().abrirPuerta();
         }else {System.out.println("La puerta ya está subida");}
     }
 
     public void bajarPuertaGaraje() {
         if(garaje.getPuerta().getEstado()==true){
-        garaje.cerrarPuerta();
+        garaje.getPuerta().cerrarPuerta();
         } else {System.out.println("La puerta ya está bajada");}
     }
 
@@ -145,6 +141,7 @@ public class Central {
         System.out.println("Usuario registrado");
         System.out.println(Central.usuarios.size());
     }
+    
 
     public static int comprobarUsuario(Usuario user) {
         for (int i = 0; i < usuarios.size(); i++) {

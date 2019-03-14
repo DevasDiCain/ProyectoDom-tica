@@ -38,5 +38,18 @@ public class PuertaAutomatica {
     public String toString() {
         return "PuertaAutomatica{" + "estado=" + estado + ", retardo=" + retardo + '}';
     }
-    
+     public void consusltarEstado(){
+        if(this.estado==true){System.out.println("La Puerta del Garaje está Abierta");}
+        if(this.estado==false){System.out.println("La Puerta del Garaje está Cerrada");}
+    }
+      public void abrirPuerta(){
+       if(this.estado==false){
+           this.estado=true;
+       }else {System.out.println("La puerta ya está abierta");}
+    }
+   public void cerrarPuerta(){
+       if(this.estado==true){
+           this.estado=false;
+       }else {System.out.println("La puerta ya está cerrada");}
+   }
 }

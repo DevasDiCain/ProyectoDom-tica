@@ -10,22 +10,23 @@ package domo;
  * @author jose
  */
 public class Persiana {
-    private boolean estado;
+
     private int largo;
     private int ancho;
+    private posicionPersiana posicion;
 
-    public Persiana(boolean estado, int largo, int ancho) {
-        this.estado = estado;
+    public Persiana( int largo, int ancho, posicionPersiana posicion) {
         this.largo = largo;
         this.ancho = ancho;
+        this.posicion = posicion;
     }
 
-    public boolean getEstado() {
-        return estado;
+    public posicionPersiana getPosicion() {
+        return posicion;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setPosicion(posicionPersiana posicion) {
+        this.posicion = posicion;
     }
 
     public int getLargo() {
@@ -43,18 +44,23 @@ public class Persiana {
     public void setAncho(int ancho) {
         this.ancho = ancho;
     }
-    
+
     public void subirPersianas() {
-        if (this.estado == false) {
-            this.estado=true;
+        if (this.posicion == posicionPersiana.BAJADA || this.posicion == posicionPersiana.MEDIA_ALTURA) {
+            this.posicion = posicionPersiana.ABIERTA;
         } else {
             System.out.println("Las persianas del dormitorio ya están subidas");
         }
     }
-    public void bajarPersianas(){
-        if(this.estado==true){
-            this.estado=false;
-        }else {System.out.println("Las persianas del dormitorio ya están bajadas");}
+
+    public void bajarPersianas() {
+        if (this.posicion == posicionPersiana.ABIERTA || this.posicion == posicionPersiana.MEDIA_ALTURA) {
+            this.posicion = posicionPersiana.BAJADA;
+        } else {
+            System.out.println("Las persianas del dormitorio ya están bajadas");
+        }
     }
     
+    public void aMediaAltura(){}
+
 }
