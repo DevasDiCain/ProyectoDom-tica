@@ -18,23 +18,24 @@ public class Vista {
     
     public static Comando menu(){
         Scanner sn = new Scanner(System.in);
-        
+       Usuario user1 = new Usuario("","");
         System.out.println("Bienvenido a la Centralita");
         System.out.println("---------------------------");
-        
+        do{
         System.out.println("Introduzca sus credenciales");
         System.out.println("¿Usuario?");
         String usuario =sn.nextLine();
         System.out.println("¿Contraseña?");
         String pass= sn.nextLine();
-        Usuario user1 = new Usuario(usuario,pass);
+        user1 = new Usuario(usuario,pass);
+        }while(Central.comprobarUsuario(user1)==-2);
        
         if( Central.comprobarUsuario(user1)==1){
         System.out.println("¿A qué parte de la casa desea tener acceso?");
-        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj");
+        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj \n 6-Salir");
           int opcion = sn.nextInt();
         int operacion;
-        while (opcion<=5 && opcion >0){
+        while (opcion<=6 && opcion >0){
         switch (opcion){
             case 1: System.out.println("¿Qué tipo de acción desea realizar en el Salón?");
                     System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
@@ -109,7 +110,7 @@ public class Vista {
                     break;
             case 5: System.out.println("¿Que tipo de acción desea realizar en el Reloj?");
                     System.out.println(" 1-Consultar la Hora \n 2-Consultar la Fecha \n 3-Modificar la Hora \n 4-Modificar la fecha");
-        }              operacion = sn.nextInt();
+                      operacion = sn.nextInt();
                         switch(operacion){
                             case 1: return Comando.CONSULTAR_HORA_RELOJ;
                             
@@ -121,15 +122,10 @@ public class Vista {
                     
                     }
                     break;
+            case 6: return Comando.SIN_ACCION;      
+        }   
         }
-        } else if(Central.comprobarUsuario(user1)==2){
-            System.out.println("Introduzca sus credenciales");
-        System.out.println("¿Usuario?");
-        String usuario1 =sn.nextLine();
-        System.out.println("¿Contraseña?");
-        String pass1= sn.nextLine();
-        Usuario user2 = new Usuario(usuario1,pass1);
-        }
+        } 
         
         
         return Comando.SIN_ACCION;

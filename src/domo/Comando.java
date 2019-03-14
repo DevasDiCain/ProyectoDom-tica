@@ -40,7 +40,11 @@ public enum Comando {
     SIN_ACCION(23,"no hace nada"),
     ENCENDER_SISTEMA(24,"enciende el sistema"),
     CONSULTAR_FECHA_RELOJ(25,"Consulta fecha del reloj"),
-    MODIFICAR_FECHA_RELOJ(26,"Modificar la fecha del reloj");
+    MODIFICAR_FECHA_RELOJ(26,"Modificar la fecha del reloj"),
+    CONSULTAR_ESTADO_SALON(27,"Consultar el estado del salon"),
+    CONSULTAR_ESTADO_DORMITORIO(28,"Consultar el estado del dormitorio"),
+    CONSULTAR_ESTADO_DESPACHO(29,"Consultar el estado del despacho"),
+    CONSULTAR_ESTADO_GARAJE(30,"Consultar el estado del despacho");
     
     
     private int codigo;

@@ -35,5 +35,14 @@ public class Vigilancia {
         this.ip = ip;
     }
     
-    
+    public void activarVigilancia(){
+        if (this.estado==false){
+            this.estado=true;
+        }else {System.out.println("La vigilancia del dormitorio ya está activada");}
+    }
+    public void desactivarVigilancia(){
+        if(this.estado==true){
+            this.estado=false;
+        }else{System.out.println("La vigilancia del dormitorio ya está desactivada");}
+    }
 }

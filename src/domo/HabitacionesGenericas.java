@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class HabitacionesGenericas extends Estancias {
     
-    private Luz Luces;
+   private  Luz Luces;
     private Persiana Persianas;
     private Vigilancia camara;
 
@@ -51,6 +51,31 @@ public class HabitacionesGenericas extends Estancias {
     public void setVigilancia(Vigilancia Vigilancia) {
         this.camara = Vigilancia;
     }
+    public void consusltarEstado() {
+
+        if (this.Luces.getEstado()) {
+            System.out.println("Las Luces están encendidas");
+        } else {
+            System.out.println("Las Luces están apagadas");
+        }
+
+        if (this.Persianas.getEstado()
+                == true) {
+            System.out.println("Las Persianas están abiertas");
+        } else {
+            System.out.println("Las Persianas están bajadas");
+        }
+
+        if (this.camara.getEstado()
+                == true) {
+            System.out.println("La Vigilancia está activada");
+        } else {
+            System.out.println("La Vigilancia está desactivada");
+        }
+    }
+    
+
+    
 
     
 }

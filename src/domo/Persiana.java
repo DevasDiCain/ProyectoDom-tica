@@ -44,4 +44,17 @@ public class Persiana {
         this.ancho = ancho;
     }
     
+    public void subirPersianas() {
+        if (this.estado == false) {
+            this.estado=true;
+        } else {
+            System.out.println("Las persianas del dormitorio ya están subidas");
+        }
+    }
+    public void bajarPersianas(){
+        if(this.estado==true){
+            this.estado=false;
+        }else {System.out.println("Las persianas del dormitorio ya están bajadas");}
+    }
+    
 }

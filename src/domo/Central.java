@@ -32,86 +32,102 @@ public class Central {
 
     //SALON
     public void encenderLucesSalon() {
-        salon.encenderLuces();
+        if(salon.getLuces().getEstado()==false){
+        salon.getLuces().encenderLuces();
+        }else {System.out.println("Las luces ya están encendidas");}
     }
 
     public void apagarLucesSalon() {
-        salon.apagarLuces();
+        if(salon.getLuces().getEstado()==true){
+        salon.getLuces().apagarLuces();
+        }else {System.out.println("Las luces ya están apagadas");}
     }
 
     public void activarVigilanciaSalon() {
-        salon.apagarVigilancia();
+        if(salon.getVigilancia().getEstado()==false){
+        salon.getCamara().activarVigilancia();
+        }else {System.out.println("La vigilancia ya está activada");}
     }
 
     public void desactivarVigilanciaSalon() {
-        salon.apagarVigilancia();
+        if(salon.getVigilancia().getEstado()==true){
+        salon.getCamara().desactivarVigilancia();
+        }else {System.out.println("La vigilancia ya está apagada");}
     }
 
     public void subirPersianaSalon() {
-        salon.subirPersiana();
+        if(salon.getPersianas().getEstado()==false){
+        salon.getPersianas().subirPersianas();
+        }else {System.out.println("Las persianas ya están subidas");}
     }
 
     public void bajarPersianaSalon() {
-        salon.bajarPersiana();
+        if(salon.getPersianas().getEstado()==true){
+        salon.getPersianas().bajarPersianas();
+        } else{System.out.println("Las persianas ya están bajadas");}
     }
 
     //GARAJE
     public void subirPuertaGaraje() {
+        if(garaje.getPuerta().getEstado()==false){
         garaje.abrirPuerta();
+        }else {System.out.println("La puerta ya está subida");}
     }
 
     public void bajarPuertaGaraje() {
+        if(garaje.getPuerta().getEstado()==true){
         garaje.cerrarPuerta();
+        } else {System.out.println("La puerta ya está bajada");}
     }
 
     //Dormitorio
     public void encenderLucesDormitorio() {
-        dormitorio.encenderLuces();
+        dormitorio.getLuces().encenderLuces();
     }
 
     public void apagarLucesDormitorio() {
-        dormitorio.apagarLuces();
+        dormitorio.getLuces().apagarLuces();
     }
 
     public void activarVigilanciaDormitorio() {
-        dormitorio.activarVigilancia();
+        dormitorio.getVigilancia().activarVigilancia();
     }
 
     public void desactivarVigilanciaDormitorio() {
-        dormitorio.desactivarVigilancia();
+        dormitorio.getVigilancia().desactivarVigilancia();
     }
 
     public void subirPersianaDormitorio() {
-        dormitorio.subirPersianas();
+        dormitorio.getPersianas().subirPersianas();
     }
 
     public void bajarPersianaDormitorio() {
-        dormitorio.bajarPersianas();
+        dormitorio.getPersianas().bajarPersianas();
     }
 
     //Despacho
     public void encenderLucesDespacho() {
-        despacho.encenderLuces();
+        despacho.getLuces().encenderLuces();
     }
 
     public void apagarLucesDespacho() {
-        despacho.apagarLuces();
+        despacho.getLuces().apagarLuces();
     }
 
     public void activarVigilanciaDespacho() {
-        despacho.activarVigilancia();
+        despacho.getVigilancia().activarVigilancia();
     }
 
     public void desactivarVigilanciaDespacho() {
-        despacho.desactivarVigilancia();
+        despacho.getVigilancia().desactivarVigilancia();
     }
 
     public void subirPersianaDespacho() {
-       despacho.subirPersianas();
+       despacho.getPersianas().subirPersianas();
     }
 
     public void bajarPersianaDespacho() {
-        despacho.bajarPersianas();
+        despacho.getPersianas().bajarPersianas();
     }
 
     //Sistema

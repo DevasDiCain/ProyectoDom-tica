@@ -46,54 +46,7 @@ public class Salon extends HabitacionesGenericas {
     public void setCamara(Vigilancia Camara) {
         this.Camara = Camara;
     }
-    
-    public void consusltarEstado() {
-        
-        if (this.Luces.getEstado() == true) {
-            System.out.println("Las Luces están encendidas");
-        } else {
-            System.out.println("Las Luces están apagadas");
-        }
-        
-        if (this.Persianas.getEstado()
-                == true) {
-            System.out.println("Las Persianas están abiertas");
-        } else {
-            System.out.println("Las Persianas están bajadas");
-        }
-        
-        if (this.Camara.getEstado()
-                == true) {
-            System.out.println("La Vigilancia está activada");
-        } else {
-            System.out.println("La Vigilancia está desactivada");
-        }
-    }
-
-    public void encenderLuces() {
-        this.Luces.setEstado(true);
-    }
-
-    public void apagarLuces() {
-        this.Luces.setEstado(false);
-    }
-
-    public void subirPersiana() {
-        this.Persianas.setEstado(true);
-    }
-
-    public void bajarPersiana() {
-        this.Persianas.setEstado(false);
-    }
-
-    public void encenderVigilancia() {
-        this.Camara.setEstado(true);
-    }
-
-    public void apagarVigilancia() {
-        this.Camara.setEstado(false);
-    }
-
+  
     public static void main(String[] args) {
         Salon x = new Salon(10);
         x.consusltarEstado();

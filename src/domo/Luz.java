@@ -35,5 +35,21 @@ public class Luz {
         this.estado = estado;
         this.consumo = consumo;
     }
+    public void encenderLuces() {
+        if (this.estado == false) {
+            this.estado =true;
+        } else {
+            System.out.println("Las luces del dormitorio ya están encendidas");
+        }
+
+    }
+
+    public void apagarLuces() {
+        if (this.estado == true) {
+            this.estado=false;
+        } else {
+            System.out.println("Las luces del dormitorio ya están apagadas");
+        }
+    }
     
 }

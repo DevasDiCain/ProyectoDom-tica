@@ -23,7 +23,7 @@ public class Garaje extends Estancias {
         this.Puerta= new PuertaAutomatica();
     }
     
-    public PuertaAutomatica isPuerta() {
+    public PuertaAutomatica getPuerta() {
         return Puerta;
     }
 
