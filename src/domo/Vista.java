@@ -35,12 +35,12 @@ public class Vista {
         System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj \n 6-Salir");
           int opcion = sn.nextInt();
         int operacion;
-        while (opcion<=6 && opcion >0){
+        while (opcion<=7 && opcion >0){
         switch (opcion){
             case 1: System.out.println("¿Qué tipo de acción desea realizar en el Salón?");
                     System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana");
+                            + " \n 6-Bajar Persiana \n 7-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Salon;
@@ -55,24 +55,27 @@ public class Vista {
                                
                                case 6: return Comando.BAJAR_PERSIANA_Salon;
                                
+                               case 7: return Comando.SIN_ACCION;
                                        
                            }
                     break;
                     
             case 2: System.out.println("¿Qué tipo de acción desea realizar en el Garaje?");
-                    System.out.println("1-Abrir Puerta \n 2-Cerrar Puerta");
+                    System.out.println("1-Abrir Puerta \n 2-Cerrar Puerta \n 3-Salir");
                            operacion=sn.nextInt();
                            switch (operacion){
                                case 1: return Comando.SUBIR_PUERTA;
                                
                                case 2: return Comando.BAJAR_PUERTA;
+                               
+                               case 3: return Comando.SIN_ACCION;
                            }
                      break;
                      
             case 3: System.out.println("¿Qué tipo de acción desea realizar en el Habitacion?");
                     System.out.println("\n 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana");
+                            + " \n 6-Bajar Persiana \n 7-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Dormitorio;
@@ -86,13 +89,15 @@ public class Vista {
                                case 5: return Comando.SUBIR_PERSIANA_Dormitorio;
                                
                                case 6: return Comando.BAJAR_PERSIANA_Dormitorio;
+                               
+                               case 7: return Comando.SIN_ACCION;
                            
                            }
                      break;
             case 4: System.out.println("¿Qué tipo de acción desea realizar en el Despacho?");
                     System.out.println("1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana");
+                            + " \n 6-Bajar Persiana \n 7-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Despacho;
@@ -106,10 +111,12 @@ public class Vista {
                                case 5: return Comando.SUBIR_PERSIANA_Despacho;
                                
                                case 6: return Comando.BAJAR_PERSIANA_Despacho;
+                               
+                               case 7: return Comando.SIN_ACCION;
                            }
                     break;
             case 5: System.out.println("¿Que tipo de acción desea realizar en el Reloj?");
-                    System.out.println(" 1-Consultar la Hora \n 2-Consultar la Fecha \n 3-Modificar la Hora \n 4-Modificar la fecha");
+                    System.out.println(" 1-Consultar la Hora \n 2-Consultar la Fecha \n 3-Modificar la Hora \n 4-Modificar la fecha \n 5-Salir");
                       operacion = sn.nextInt();
                         switch(operacion){
                             case 1: return Comando.CONSULTAR_HORA_RELOJ;
@@ -119,6 +126,8 @@ public class Vista {
                             case 3: return Comando.MODIFICAR_HORA_RELOJ;
                             
                             case 4: return Comando.MODIFICAR_FECHA_RELOJ;
+                            
+                            case 5: return Comando.SIN_ACCION;
                     
                     }
                     break;
