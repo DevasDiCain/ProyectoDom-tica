@@ -134,6 +134,13 @@ public class Central {
     public void encenderSistema() {
        this.system.setEstadoSistema(true);
     }
+    //LUCES
+    
+    public void apagarLucesGeneral(){
+    this.despacho.getLuces().apagarLuces();
+    this.dormitorio.getLuces().apagarLuces();
+    this.salon.getLuces().apagarLuces();
+    }
     
     //Usuarios
     public static void registrarUsuario(Usuario user) {
