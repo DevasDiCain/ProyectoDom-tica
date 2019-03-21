@@ -5,16 +5,17 @@
  */
 package domo;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author jose
  */
 public class Luz {
-    
+
     private boolean estado;
     private double consumo;
 
-    
     public boolean getEstado() {
         return estado;
     }
@@ -35,9 +36,10 @@ public class Luz {
         this.estado = estado;
         this.consumo = consumo;
     }
+
     public void encenderLuces() {
         if (this.estado == false) {
-            this.estado =true;
+            this.estado = true;
         } else {
             System.out.println("Las luces del dormitorio ya están encendidas");
         }
@@ -46,11 +48,24 @@ public class Luz {
 
     public void apagarLuces() {
         if (this.estado == true) {
-            this.estado=false;
+            this.estado = false;
         } else {
             System.out.println("Las luces del dormitorio ya están apagadas");
         }
     }
-    
-    
+
+    public void apagadoGeneral() {
+        this.estado = false;
+    }
+
+    public void apagadoEco(HabitacionesGenericas aApagar) {
+        LocalTime primeraHora = LocalTime.of(8, 00);
+        LocalTime segundaHora = LocalTime.of(18, 00);
+        if (primeraHora.isAfter(Reloj.hallarHora()) && segundaHora.isBefore(Reloj.hallarHora())) {
+            if (aApagar.getPersianas().getPosicion().equals(posicionPersiana.ABIERTA) || aApagar.getPersianas().getPosicion().equals(posicionPersiana.MEDIA_ALTURA)) {
+                  aApagar.getLuces().setEstado(false);
+            }
+        }
+    }
+
 }
