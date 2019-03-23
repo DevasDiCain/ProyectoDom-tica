@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author jose
  */
-public class HabitacionesGenericas extends Estancias {
+public class HabitacionesGenericas extends Estancias {//Estás son Hijas de Estancias y añade 3 atributos que recogerán Despacho, Salon y Dormitorio
     
    private  Luz Luces;
     private Persiana Persianas;
@@ -51,7 +51,7 @@ public class HabitacionesGenericas extends Estancias {
     public void setVigilancia(Vigilancia Vigilancia) {
         this.camara = Vigilancia;
     }
-    public void consusltarEstado() {
+    public void consusltarEstado() {//Este método será reutilizado por sus hijas
 
         if (this.Luces.getEstado()) {
             System.out.println("Las Luces están ENCENDIDAS");

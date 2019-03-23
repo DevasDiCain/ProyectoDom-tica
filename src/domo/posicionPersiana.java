@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public enum posicionPersiana {
+public enum posicionPersiana {//Las persianas se podrán encontrar en 3 posiciones diferentes
   
     ABIERTA,BAJADA,MEDIA_ALTURA;
    

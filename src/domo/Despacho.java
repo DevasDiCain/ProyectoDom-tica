@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author jose
  */
-public class Despacho extends HabitacionesGenericas {
+public class Despacho extends HabitacionesGenericas {//La clase Despacho es Hija de HabitacionesGenericas y estás a su vez de Estancias
 
     public Despacho(int m2) {
         super(m2);

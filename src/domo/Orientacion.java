@@ -9,6 +9,6 @@ package domo;
  *
  * @author jose
  */
-public enum Orientacion {
+public enum Orientacion {//Orientación para cada habitación
     NORTE,SUR,ESTE,OESTE;
 }

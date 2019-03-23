@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Salon extends HabitacionesGenericas {
+public class Salon extends HabitacionesGenericas {//La clase Salon es Hija de HabitacionesGenericas y estás a su vez de Estancias
     //Estado de las Luces,Persianas y Vigilancia.
 
     

@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Vigilancia {
+public class Vigilancia {//Cámaras de las estancias que la tengan
     private boolean estado;
     private String ip;// Dirección ip de la camara
 

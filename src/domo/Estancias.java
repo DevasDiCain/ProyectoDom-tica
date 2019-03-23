@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Estancias {
+public class Estancias { //Clase padre de todas las estancias de la casa
     private double m2;
     
 

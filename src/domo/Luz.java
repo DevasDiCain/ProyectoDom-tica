@@ -11,7 +11,7 @@ import java.time.LocalTime;
  *
  * @author jose
  */
-public class Luz {
+public class Luz {//Las luces que contendrán las habitaciones de la casa
 
     private boolean estado;
     private double consumo;
@@ -53,11 +53,11 @@ public class Luz {
             System.out.println("Las luces  ya están apagadas");
         }
     }
-
+    //Método que apagará todas las luces de la casa
     public  void apagadoGeneral() {
         this.estado = false;
     }
-
+    //Método que apaga las luces de las estancias que tengan las persianas abiertas entre las 08:00 y las 16:00
     public  void apagadoEco(HabitacionesGenericas aApagar) {
         LocalTime primeraHora = LocalTime.of(8, 00);
         LocalTime segundaHora = LocalTime.of(18, 00);

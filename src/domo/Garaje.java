@@ -10,9 +10,9 @@ package domo;
  * @author jose
  */
 //Hereda de estancias
-public class Garaje extends Estancias {
+public class Garaje extends Estancias {//Garaje será hija directa de Estancias y no de HabitacionesGenericas
     
-    private PuertaAutomatica Puerta;
+    private PuertaAutomatica Puerta; //Clase PuertaAutomática será definida en su clase
     private int capacidadVehiculos;
     
 

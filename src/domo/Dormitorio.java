@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Dormitorio extends HabitacionesGenericas {
+public class Dormitorio extends HabitacionesGenericas {//La clase Dormitorio es Hija de HabitacionesGenericas y estás a su vez de Estancias
     public Orientacion orientacion;
  
 

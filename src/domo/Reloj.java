@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author jose
  */
-public class Reloj {
+public class Reloj {//El reloj servirá para el apagado eco y para futuras funciones además de informarnos de la hora y el día en el que nos encontramos
     
    static LocalTime hora;//hh:mm:ss
    static LocalDate fecha;//aaaa-mm-dd

@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Sistema {
+public class Sistema {//Clase que controla el encendido/apagado del sistema
     
     private boolean estadoSistema;
 

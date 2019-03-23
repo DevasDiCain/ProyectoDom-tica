@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author jose
  */
-public class Usuario {
+public class Usuario {//Usuarios registrados en el sistema tendrán id, pass y rango
     
-    private  String id;
-    private  String pass;
-    private  int rango;
+    private  String id;//Identificador
+    private  String pass;//Contraseña
+    private  int rango;//Permitirá el acceso a ciertas funciones
     
     public Usuario(String id, String pass){
     this.id=id;

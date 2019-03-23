@@ -19,7 +19,9 @@ public class Vista {
     public static Comando menu(){
         Scanner sn = new Scanner(System.in);
       
-       
+       //Interface fácil e intuitiva para el usuario
+       //Se volverá a repetir la Vista hasta que el usuario desee.
+       //Si los valores introducidos no están comprendidos entre las opciones establecidas se repetirá la pregunta hasta que introduzca un valor correcto
         System.out.println("¿A qué parte de la casa desea tener acceso?");
         System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj \n 6-Luces \n 7-Consultar Estado de la vivienda \n 8-Salir");
           int opcion = sn.nextInt();

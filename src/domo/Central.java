@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Central {
 
-    private static ArrayList<Usuario> usuarios = new ArrayList();
+    private static ArrayList<Usuario> usuarios = new ArrayList();//Contendrá los usuarios registrados
     private Salon salon;
     private Despacho despacho;
     private Dormitorio dormitorio;
@@ -23,6 +23,8 @@ public class Central {
     private Sistema system;
 
     public Central() {
+        //Se establecen las partes de la vivienda que se van a ver afectadas por el sistema domótico
+        //Todas se iniciarán con 10m2
         this.salon = new Salon(10);
         this.despacho = new Despacho(10);
         this.dormitorio = new Dormitorio(10);
@@ -34,6 +36,7 @@ public class Central {
         return system;
     }
 
+    //Métodos de interación con la vivienda
     //SALON
     public void encenderLucesSalon() {
         if(salon.getLuces().getEstado()==false){
@@ -66,9 +69,7 @@ public class Central {
     public void bajarPersianaSalon() {
         this.salon.getPersianas().bajarPersianas();
     }
-    public void consultarEstadoSalon(){
-        this.salon.consusltarEstado();
-    }
+   
 
     //GARAJE
     public void subirPuertaGaraje() {
@@ -82,10 +83,9 @@ public class Central {
         garaje.getPuerta().cerrarPuerta();
         } else {System.out.println("La puerta ya está bajada");}
     }
-    public void consultarEstadoGaraje(){
-        garaje.consultarEstadoGaraje();
-    }
+    
     //Dormitorio
+    //Dormitorio-Luces
     public void encenderLucesDormitorio() {
         dormitorio.getLuces().encenderLuces();
     }
@@ -94,6 +94,7 @@ public class Central {
         dormitorio.getLuces().apagarLuces();
     }
 
+    //Dormitorio-Vigilancia
     public void activarVigilanciaDormitorio() {
         dormitorio.getVigilancia().activarVigilancia();
     }
@@ -102,6 +103,7 @@ public class Central {
         dormitorio.getVigilancia().desactivarVigilancia();
     }
 
+    //Dormitorio-Persiana
     public void subirPersianaDormitorio() {
         dormitorio.getPersianas().subirPersianas();
     }
@@ -109,11 +111,10 @@ public class Central {
     public void bajarPersianaDormitorio() {
         dormitorio.getPersianas().bajarPersianas();
     }
-    public void consultarEstadoDormitorio(){
-        dormitorio.consusltarEstado();
-    }
+   
 
     //Despacho
+    //Despacho-Luces
     public void encenderLucesDespacho() {
         despacho.getLuces().encenderLuces();
     }
@@ -121,7 +122,8 @@ public class Central {
     public void apagarLucesDespacho() {
         despacho.getLuces().apagarLuces();
     }
-
+    
+    //Despacho-Vigilancia
     public void activarVigilanciaDespacho() {
         despacho.getVigilancia().activarVigilancia();
     }
@@ -129,7 +131,8 @@ public class Central {
     public void desactivarVigilanciaDespacho() {
         despacho.getVigilancia().desactivarVigilancia();
     }
-
+    
+    //Despacho-Persiana
     public void subirPersianaDespacho() {
        despacho.getPersianas().subirPersianas();
     }
@@ -137,9 +140,7 @@ public class Central {
     public void bajarPersianaDespacho() {
         despacho.getPersianas().bajarPersianas();
     }
-    public void consultarEstadoDespacho(){
-        despacho.consusltarEstado();
-    }
+   
 
     //Sistema
     public void apagarSistema() {
@@ -150,12 +151,18 @@ public class Central {
     public void encenderSistema() {
        system.encenderSistema();
     }
-    //LUCES
     
-    public void apagarLucesGeneral(){
-    this.despacho.getLuces().apagarLuces();
-    this.dormitorio.getLuces().apagarLuces();
-    this.salon.getLuces().apagarLuces();
+    
+    //LUCES
+      public void apagadoGeneral(){
+        this.despacho.getLuces().setEstado(false);
+        this.dormitorio.getLuces().setEstado(false);
+        this.salon.getLuces().setEstado(false);
+    }
+    public void apagadoEco(){
+        this.despacho.getLuces().apagadoEco(despacho);
+        this.dormitorio.getLuces().apagadoEco(dormitorio);
+        this.salon.getLuces().apagadoEco(salon);
     }
     
     //Usuarios
@@ -176,6 +183,8 @@ public class Central {
         }
         return -1;
     }
+    //Consultas
+    //Consulta-General
     public void consultarEstadoVivienda(){
         System.out.println("---->Salon<----");
         salon.consusltarEstado();
@@ -186,17 +195,26 @@ public class Central {
         System.out.println("---->Garaje<----");
         garaje.consultarEstadoGaraje();
     }
-    public void apagadoGeneral(){
-        this.despacho.getLuces().setEstado(false);
-        this.dormitorio.getLuces().setEstado(false);
-        this.salon.getLuces().setEstado(false);
+  
+    //Consulta-Despacho
+     public void consultarEstadoDespacho(){
+        despacho.consusltarEstado();
     }
-    public void apagadoEco(){
-        this.despacho.getLuces().apagadoEco(despacho);
-        this.dormitorio.getLuces().apagadoEco(dormitorio);
-        this.salon.getLuces().apagadoEco(salon);
+     //Consulta-Salon
+      public void consultarEstadoSalon(){
+        this.salon.consusltarEstado();
+    }
+     //Consulta-Dormitorio
+       public void consultarEstadoDormitorio(){
+        dormitorio.consusltarEstado();
+    }
+     //Consulta-Garaje
+     public void consultarEstadoGaraje(){
+        garaje.consultarEstadoGaraje();
     }
 
+     
+     //Ejecución de COMANDOS
     public void ejecutarComando(Comando comando, Central centralita) {
         switch (comando) {
             case APAGAR_SISTEMA:

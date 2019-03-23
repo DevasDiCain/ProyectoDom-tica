@@ -14,6 +14,7 @@ public enum Comando {
     //1.-El constructor es privado
     //2.-Sólo pueden instanciarse con un tipo de objeto concreto
     
+    //Comandos necesarios para el sistema domótico
     APAGAR_SISTEMA(0,"Apagar Sistema"),
     CONSULTAR_HORA_RELOJ(1,"Consulta la hora del sistema"),
     MODIFICAR_HORA_RELOJ(2,"Modifica la hora del sistema"),

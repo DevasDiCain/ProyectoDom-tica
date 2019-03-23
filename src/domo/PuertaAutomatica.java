@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class PuertaAutomatica {
+public class PuertaAutomatica {//Clase que contiene las carácterísticas de la Puerta del Garaje
     private boolean estado;
     private int retardo;//segundos
 

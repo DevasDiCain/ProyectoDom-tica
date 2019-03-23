@@ -9,7 +9,7 @@ package domo;
  *
  * @author jose
  */
-public class Persiana {
+public class Persiana {// El estado de las persianas constará de 3 posiciones que veremos en su clase enum
 
     private int largo;
     private int ancho;
@@ -60,7 +60,9 @@ public class Persiana {
             System.out.println("Las persianas del dormitorio ya están bajadas");
         }
     }
-    
-    public void aMediaAltura(){}
+    //Establece la persiana a media altura
+    public void aMediaAltura(){
+        this.posicion=posicionPersiana.MEDIA_ALTURA;
+    }
 
 }
