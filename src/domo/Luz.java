@@ -13,7 +13,7 @@ import java.time.LocalTime;
  */
 public class Luz {
 
-    private boolean estado;
+    private static boolean estado;
     private double consumo;
 
     public boolean getEstado() {
@@ -54,11 +54,11 @@ public class Luz {
         }
     }
 
-    public void apagadoGeneral() {
-        this.estado = false;
+    public static void apagadoGeneral() {
+        Luz.estado = false;
     }
 
-    public void apagadoEco(HabitacionesGenericas aApagar) {
+    public static void apagadoEco(HabitacionesGenericas aApagar) {
         LocalTime primeraHora = LocalTime.of(8, 00);
         LocalTime segundaHora = LocalTime.of(18, 00);
         if (primeraHora.isAfter(Reloj.hallarHora()) && segundaHora.isBefore(Reloj.hallarHora())) {
@@ -66,6 +66,9 @@ public class Luz {
                   aApagar.getLuces().setEstado(false);
             }
         }
+    }
+    public static void consultarEstado(){
+         if(Luz.estado==false){System.out.println("Las luces están apagadas");}else {System.out.println("Las luces están encendidas");}
     }
 
 }

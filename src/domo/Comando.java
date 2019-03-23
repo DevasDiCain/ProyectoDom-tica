@@ -44,7 +44,10 @@ public enum Comando {
     CONSULTAR_ESTADO_SALON(27,"Consultar el estado del salon"),
     CONSULTAR_ESTADO_DORMITORIO(28,"Consultar el estado del dormitorio"),
     CONSULTAR_ESTADO_DESPACHO(29,"Consultar el estado del despacho"),
-    CONSULTAR_ESTADO_GARAJE(30,"Consultar el estado del despacho");
+    CONSULTAR_ESTADO_GARAJE(30,"Consultar el estado del despacho"),
+    APAGADO_GENERAL(31,"Apaga todas las luces de la casa"),
+    APAGADO_ECO(32,"Apagado eco"),
+    CONSULTAR_LUCES(33,"Consultar las luces de la vivienda");
     
     
     private int codigo;

@@ -30,6 +30,10 @@ public class Central {
         this.system= new Sistema();
     }
 
+    public Sistema getSystem() {
+        return system;
+    }
+
     //SALON
     public void encenderLucesSalon() {
         if(salon.getLuces().getEstado()==false){
@@ -45,13 +49,13 @@ public class Central {
 
     public void activarVigilanciaSalon() {
         if(salon.getVigilancia().getEstado()==false){
-        salon.getCamara().activarVigilancia();
+        salon.getVigilancia().activarVigilancia();
         }else {System.out.println("La vigilancia ya está activada");}
     }
 
     public void desactivarVigilanciaSalon() {
         if(salon.getVigilancia().getEstado()==true){
-        salon.getCamara().desactivarVigilancia();
+        salon.getVigilancia().desactivarVigilancia();
         }else {System.out.println("La vigilancia ya está apagada");}
     }
 
@@ -61,6 +65,9 @@ public class Central {
 
     public void bajarPersianaSalon() {
         this.salon.getPersianas().bajarPersianas();
+    }
+    public void consultarEstadoSalon(){
+        this.salon.consusltarEstado();
     }
 
     //GARAJE
@@ -100,6 +107,9 @@ public class Central {
     public void bajarPersianaDormitorio() {
         dormitorio.getPersianas().bajarPersianas();
     }
+    public void consultarEstadoDormitorio(){
+        dormitorio.consusltarEstado();
+    }
 
     //Despacho
     public void encenderLucesDespacho() {
@@ -125,10 +135,14 @@ public class Central {
     public void bajarPersianaDespacho() {
         despacho.getPersianas().bajarPersianas();
     }
+    public void consultarEstadoDespacho(){
+        despacho.consusltarEstado();
+    }
 
     //Sistema
     public void apagarSistema() {
         this.system.setEstadoSistema(false);
+        
     }
 
     public void encenderSistema() {
@@ -270,6 +284,35 @@ public class Central {
             case MODIFICAR_FECHA_RELOJ:
                 Reloj.modificarFecha(LocalDate.MAX);
                 System.out.println("Función Aún No Disponible");
+                break;
+                
+            case APAGADO_GENERAL:
+                Luz.apagadoGeneral();
+                System.out.println("Luces apagadas");
+                break;
+            case APAGADO_ECO:
+                Luz.apagadoEco(salon);
+                Luz.apagadoEco(dormitorio);
+                Luz.apagadoEco(despacho);
+                break;
+                
+            case CONSULTAR_LUCES:
+                Luz.consultarEstado();
+                break;
+                
+                
+            case CONSULTAR_ESTADO_SALON:
+                centralita.consultarEstadoSalon();
+                break;
+             
+            case CONSULTAR_ESTADO_DESPACHO:
+                centralita.consultarEstadoDespacho();
+                break;
+             
+            case CONSULTAR_ESTADO_DORMITORIO:
+                centralita.consultarEstadoDormitorio();
+                break;
+            
         }
     }
 }

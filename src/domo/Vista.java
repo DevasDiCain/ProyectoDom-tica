@@ -18,21 +18,10 @@ public class Vista {
     
     public static Comando menu(){
         Scanner sn = new Scanner(System.in);
-       Usuario user1 = new Usuario("","");
-        System.out.println("Bienvenido a la Centralita");
-        System.out.println("---------------------------");
-        do{
-        System.out.println("Introduzca sus credenciales");
-        System.out.println("¿Usuario?");
-        String usuario =sn.nextLine();
-        System.out.println("¿Contraseña?");
-        String pass= sn.nextLine();
-        user1 = new Usuario(usuario,pass);
-        }while(Central.comprobarUsuario(user1)==-2);
+      
        
-        if( Central.comprobarUsuario(user1)==1){
         System.out.println("¿A qué parte de la casa desea tener acceso?");
-        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Habitacion \n 4-Despacho \n 5-Reloj \n 6-Salir");
+        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj \n 6-Luces \n 7-Salir");
           int opcion = sn.nextInt();
         int operacion;
         while (opcion<=7 && opcion >0){
@@ -40,7 +29,7 @@ public class Vista {
             case 1: System.out.println("¿Qué tipo de acción desea realizar en el Salón?");
                     System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana \n 7-Salir");
+                            + " \n 6-Bajar Persiana \n 7-Consultar estado \n 8-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Salon;
@@ -55,7 +44,9 @@ public class Vista {
                                
                                case 6: return Comando.BAJAR_PERSIANA_Salon;
                                
-                               case 7: return Comando.SIN_ACCION;
+                               case 7: return Comando.CONSULTAR_ESTADO_SALON;
+                               
+                               case 8: return Comando.APAGAR_SISTEMA;
                                        
                            }
                     break;
@@ -68,14 +59,14 @@ public class Vista {
                                
                                case 2: return Comando.BAJAR_PUERTA;
                                
-                               case 3: return Comando.SIN_ACCION;
+                               case 3: return Comando.APAGAR_SISTEMA;
                            }
                      break;
                      
-            case 3: System.out.println("¿Qué tipo de acción desea realizar en el Habitacion?");
+            case 3: System.out.println("¿Qué tipo de acción desea realizar en el Dormitorio?");
                     System.out.println("\n 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana \n 7-Salir");
+                            + " \n 6-Bajar Persiana \n 7-Consultar estado \n 8-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Dormitorio;
@@ -90,14 +81,16 @@ public class Vista {
                                
                                case 6: return Comando.BAJAR_PERSIANA_Dormitorio;
                                
-                               case 7: return Comando.SIN_ACCION;
+                               case 7: return Comando.CONSULTAR_ESTADO_DORMITORIO;
+                               
+                               case 8: return Comando.APAGAR_SISTEMA;
                            
                            }
                      break;
             case 4: System.out.println("¿Qué tipo de acción desea realizar en el Despacho?");
                     System.out.println("1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
-                            + " \n 6-Bajar Persiana \n 7-Salir");
+                            + " \n 6-Bajar Persiana \n 7-Consultar estado \n 8-Salir");
                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Despacho;
@@ -112,7 +105,9 @@ public class Vista {
                                
                                case 6: return Comando.BAJAR_PERSIANA_Despacho;
                                
-                               case 7: return Comando.SIN_ACCION;
+                               case 7: return Comando.CONSULTAR_ESTADO_DESPACHO;
+                               
+                               case 8: return Comando.APAGAR_SISTEMA;
                            }
                     break;
             case 5: System.out.println("¿Que tipo de acción desea realizar en el Reloj?");
@@ -127,14 +122,25 @@ public class Vista {
                             
                             case 4: return Comando.MODIFICAR_FECHA_RELOJ;
                             
-                            case 5: return Comando.SIN_ACCION;
+                            case 5: return Comando.APAGAR_SISTEMA;
                     
                     }
                     break;
-            case 6: return Comando.SIN_ACCION;      
+            case 6: System.out.println("1-¿Desea realizar un apagado general? \n 2-¿Desea activar el apagado eco? \n 3-Consultar Estado");
+                     operacion = sn.nextInt();
+                      switch (operacion){
+                          case 1: return Comando.APAGADO_GENERAL;
+                          
+                          case 2: return Comando.APAGADO_ECO;
+                          
+                          case 3: return Comando.CONSULTAR_LUCES;
+         
+                      }
+                      break;
+            case 7: return Comando.APAGAR_SISTEMA;      
         }   
         }
-        } 
+        
         
         
         return Comando.SIN_ACCION;

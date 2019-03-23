@@ -12,37 +12,11 @@ package domo;
 public class Salon extends HabitacionesGenericas {
     //Estado de las Luces,Persianas y Vigilancia.
 
-    private Luz Luces;
-    private Persiana Persianas;
-    private Vigilancia Camara;
     
     public Salon(int m2) {
         super(m2);
     }
-    
-    public Luz getLuces() {
-        return Luces;
-    }
-    
-    public void setLuces(Luz Luces) {
-        this.Luces = Luces;
-    }
-    
-    public Persiana getPersianas() {
-        return Persianas;
-    }
-    
-    public void setPersianas(Persiana Persianas) {
-        this.Persianas = Persianas;
-    }
-    
-    public Vigilancia getCamara() {
-        return Camara;
-    }
-    
-    public void setCamara(Vigilancia Camara) {
-        this.Camara = Camara;
-    }
+ 
   
     public void consusltarEstado() {
 

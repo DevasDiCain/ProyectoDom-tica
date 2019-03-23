@@ -13,6 +13,12 @@ public class Sistema {
     
     private boolean estadoSistema;
 
+    public Sistema() {
+        this.estadoSistema = true;
+    }
+    
+    
+
     public boolean isEstadoSistema() {
         return estadoSistema;
     }
