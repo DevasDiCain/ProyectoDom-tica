@@ -141,12 +141,12 @@ public class Central {
 
     //Sistema
     public void apagarSistema() {
-        this.system.setEstadoSistema(false);
+        system.apagarSistema();
         
     }
 
     public void encenderSistema() {
-       this.system.setEstadoSistema(true);
+       system.encenderSistema();
     }
     //LUCES
     
@@ -160,7 +160,6 @@ public class Central {
     public static void registrarUsuario(Usuario user) {
         usuarios.add(user);
         System.out.println("Usuario registrado");
-        System.out.println(Central.usuarios.size());
     }
     
 
@@ -177,8 +176,8 @@ public class Central {
         return -1;
     }
 
-    public void ejecutarComando(Comando comando) {
-        Central centralita = new Central();
+    public void ejecutarComando(Comando comando, Central centralita) {
+      
         switch (comando) {
             case APAGAR_SISTEMA:
                 centralita.apagarSistema();

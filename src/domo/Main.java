@@ -23,7 +23,7 @@ public class Main {
         String a = sn.nextLine();
         Usuario usuariox = new Usuario(u, a);
         Central.registrarUsuario(usuariox);
-        Central.comprobarUsuario(usuariox);
+       
          Usuario user1 = new Usuario("","");
         System.out.println("Bienvenido a la Centralita");
         System.out.println("---------------------------");
@@ -34,13 +34,14 @@ public class Main {
         System.out.println("¿Contraseña?");
         String pass= sn.nextLine();
         user1 = new Usuario(usuario,pass);
+         Central.comprobarUsuario(usuariox);
         }while(Central.comprobarUsuario(user1)==-2);
-       
+        sn.nextLine();
         do {
+            System.out.println("---------------------");
             Comando comando = Vista.menu();
-            centralita.ejecutarComando(comando);
-            if(centralita.getSystem().isEstadoSistema()==false){break;}
-        } while (Central.comprobarUsuario(usuariox)==1);
+            centralita.ejecutarComando(comando,centralita);
+        } while (centralita.getSystem().isEstadoSistema()==true && Central.comprobarUsuario(usuariox)==1);
 
     }
 }

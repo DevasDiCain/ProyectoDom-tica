@@ -21,10 +21,10 @@ public class Vista {
       
        
         System.out.println("¿A qué parte de la casa desea tener acceso?");
-        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj \n 6-Luces \n 7-Salir");
+        System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj \n 6-Luces \n 7-Consultar Estado de la vivienda \n 8-Salir");
           int opcion = sn.nextInt();
         int operacion;
-        while (opcion<=7 && opcion >0){
+        while (opcion<=8 && opcion >0){
         switch (opcion){
             case 1: System.out.println("¿Qué tipo de acción desea realizar en el Salón?");
                     System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
@@ -126,18 +126,27 @@ public class Vista {
                     
                     }
                     break;
-            case 6: System.out.println("1-¿Desea realizar un apagado general? \n 2-¿Desea activar el apagado eco? \n 3-Consultar Estado");
+            case 6: System.out.println("1-¿Desea realizar un apagado general? \n  2-¿Desea activar el apagado eco?");
                      operacion = sn.nextInt();
                       switch (operacion){
                           case 1: return Comando.APAGADO_GENERAL;
                           
                           case 2: return Comando.APAGADO_ECO;
-                          
-                          case 3: return Comando.CONSULTAR_LUCES;
-         
+
                       }
                       break;
-            case 7: return Comando.APAGAR_SISTEMA;      
+                      
+            case 7: System.out.println("¿De que parte de la casa desea consultar el estado?");
+                                  System.out.println(" 1-Salon \n 2-Dormitorio \n 3-Despacho");
+                                  operacion = sn.nextInt();
+                                  switch (operacion){
+                                      case 1: return Comando.CONSULTAR_ESTADO_SALON;
+                                      
+                                      case 2: return Comando.CONSULTAR_ESTADO_DORMITORIO;
+                                      
+                                      case 3: return Comando.CONSULTAR_ESTADO_DESPACHO;
+                                  }
+            case 8: return Comando.APAGAR_SISTEMA;      
         }   
         }
         

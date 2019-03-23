@@ -26,6 +26,12 @@ public class Sistema {
     public void setEstadoSistema(boolean estadoSistema) {
         this.estadoSistema = estadoSistema;
     }
+    public void apagarSistema(){
+        estadoSistema=false;
+    }
+    public void encenderSistema(){
+        estadoSistema=true;
+    }
     
     
 }
