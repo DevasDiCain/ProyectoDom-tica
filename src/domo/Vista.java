@@ -22,9 +22,10 @@ public class Vista {
        //Interface fácil e intuitiva para el usuario
        //Se volverá a repetir la Vista hasta que el usuario desee.
        //Si los valores introducidos no están comprendidos entre las opciones establecidas se repetirá la pregunta hasta que introduzca un valor correcto
+       int opcion=0;
         System.out.println("¿A qué parte de la casa desea tener acceso?");
         System.out.println(" 1-Salón \n 2-Garaje  \n 3-Dormitorio \n 4-Despacho \n 5-Reloj \n 6-Luces \n 7-Consultar Estado de la vivienda \n 8-Salir");
-          int opcion = sn.nextInt();
+         try{ opcion = sn.nextInt();} catch(RuntimeException e){System.out.println("Introduzca un valor comprendido entre 1 y 8");}
           System.out.println("------------");
         int operacion;
         while (opcion<=8 && opcion >0){
@@ -33,7 +34,7 @@ public class Vista {
                     System.out.println(" 1-Encender las Luces \n 2-Apagar las luces \n "
                             + "3-Activar Vigilancia \n 4-Desactivar Vigilancia \n 5-Subir Persiana"
                             + " \n 6-Bajar Persiana \n 7-Consultar estado \n 8-Salir");
-                           operacion=sn.nextInt();
+                            operacion=sn.nextInt();
                            switch(operacion){
                                case 1: return Comando.ENCENDER_LUCES_Salon;
                                         
