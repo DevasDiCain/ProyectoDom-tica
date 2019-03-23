@@ -47,7 +47,8 @@ public enum Comando {
     CONSULTAR_ESTADO_GARAJE(30,"Consultar el estado del despacho"),
     APAGADO_GENERAL(31,"Apaga todas las luces de la casa"),
     APAGADO_ECO(32,"Apagado eco"),
-    CONSULTAR_LUCES(33,"Consultar las luces de la vivienda");
+    CONSULTAR_LUCES(33,"Consultar las luces de la vivienda"),
+    CONSULTAR_ESTADO_VIVIENDA(34,"Consultar el estado de la vivienda");
     
     
     private int codigo;

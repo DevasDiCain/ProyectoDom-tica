@@ -37,5 +37,7 @@ public class Garaje extends Estancias {
     public String toString() {
         return super.toString()+"Garaje{" + "Puerta=" + Puerta + ", capacidadVehiculos=" + capacidadVehiculos + '}';
     }
-    
+    public void consultarEstadoGaraje(){
+        Puerta.consusltarEstado();
+    }
 }

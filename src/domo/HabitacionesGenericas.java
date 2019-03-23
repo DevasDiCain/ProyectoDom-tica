@@ -54,23 +54,22 @@ public class HabitacionesGenericas extends Estancias {
     public void consusltarEstado() {
 
         if (this.Luces.getEstado()) {
-            System.out.println("Las Luces están encendidas");
+            System.out.println("Las Luces están ENCENDIDAS");
         } else {
-            System.out.println("Las Luces están apagadas");
+            System.out.println("Las Luces están APAGADAS");
         }
 
-        if (this.Persianas.getPosicion()
-                == posicionPersiana.ABIERTA) {
-            System.out.println("Las Persianas están abiertas");
+        if (this.Persianas.getPosicion()==posicionPersiana.ABIERTA || this.Persianas.getPosicion()==posicionPersiana.MEDIA_ALTURA) {
+            System.out.println("Las Persianas están ABIERTAS");
         } else {
-            System.out.println("Las Persianas están bajadas");
+            System.out.println("Las Persianas están BAJADAS");
         }
 
         if (this.camara.getEstado()
                 == true) {
-            System.out.println("La Vigilancia está activada");
+            System.out.println("La Vigilancia está ACTIVADA");
         } else {
-            System.out.println("La Vigilancia está desactivada");
+            System.out.println("La Vigilancia está DESACTIVADA");
         }
     }
     

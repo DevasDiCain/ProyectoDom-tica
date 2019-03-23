@@ -14,33 +14,28 @@ import java.util.Scanner;
  */
 public class Despacho extends HabitacionesGenericas {
 
-    private Luz Luces;
-    private Persiana Persianas;
-    private Vigilancia camara;
-
     public Despacho(int m2) {
         super(m2);
     }
-   public void consusltarEstado() {
+  public void consusltarEstado() {
 
-        if (super.getLuces().getEstado()) {
-            System.out.println("Las Luces están encendidas");
+        if (getLuces().getEstado()==true) {
+            System.out.println("Las Luces están ENCENDIDAS");
         } else {
-            System.out.println("Las Luces están apagadas");
+            System.out.println("Las Luces están APAGADAS");
         }
 
-        if (super.getLuces().getEstado()
-                == true) {
-            System.out.println("Las Persianas están abiertas");
+        if (super.getPersianas().getPosicion()==posicionPersiana.ABIERTA || super.getPersianas().getPosicion()==posicionPersiana.MEDIA_ALTURA) {
+            System.out.println("Las Persianas están ABIERTAS");
         } else {
-            System.out.println("Las Persianas están bajadas");
+            System.out.println("Las Persianas están BAJADAS");
         }
 
         if (super.getVigilancia().getEstado()
                 == true) {
-            System.out.println("La Vigilancia está activada");
+            System.out.println("La Vigilancia está ACTIVADA");
         } else {
-            System.out.println("La Vigilancia está desactivada");
+            System.out.println("La Vigilancia está DESACTIVADA");
         }
     }
  

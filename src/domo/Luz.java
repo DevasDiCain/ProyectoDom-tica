@@ -13,7 +13,7 @@ import java.time.LocalTime;
  */
 public class Luz {
 
-    private static boolean estado;
+    private boolean estado;
     private double consumo;
 
     public boolean getEstado() {
@@ -41,7 +41,7 @@ public class Luz {
         if (this.estado == false) {
             this.estado = true;
         } else {
-            System.out.println("Las luces del dormitorio ya están encendidas");
+            System.out.println("Las luces ya están encendidas");
         }
 
     }
@@ -50,25 +50,25 @@ public class Luz {
         if (this.estado == true) {
             this.estado = false;
         } else {
-            System.out.println("Las luces del dormitorio ya están apagadas");
+            System.out.println("Las luces  ya están apagadas");
         }
     }
 
-    public static void apagadoGeneral() {
-        Luz.estado = false;
+    public  void apagadoGeneral() {
+        this.estado = false;
     }
 
-    public static void apagadoEco(HabitacionesGenericas aApagar) {
+    public  void apagadoEco(HabitacionesGenericas aApagar) {
         LocalTime primeraHora = LocalTime.of(8, 00);
         LocalTime segundaHora = LocalTime.of(18, 00);
         if (primeraHora.isAfter(Reloj.hallarHora()) && segundaHora.isBefore(Reloj.hallarHora())) {
             if (aApagar.getPersianas().getPosicion().equals(posicionPersiana.ABIERTA) || aApagar.getPersianas().getPosicion().equals(posicionPersiana.MEDIA_ALTURA)) {
-                  aApagar.getLuces().setEstado(false);
+                  aApagar.getLuces().apagarLuces();
             }
         }
     }
-    public static void consultarEstado(){
-         if(Luz.estado==false){System.out.println("Las luces están apagadas");}else {System.out.println("Las luces están encendidas");}
+    public void consultarEstado(){
+         if(this.estado==false){System.out.println("Las luces están apagadas");}else {System.out.println("Las luces están encendidas");}
     }
 
 }

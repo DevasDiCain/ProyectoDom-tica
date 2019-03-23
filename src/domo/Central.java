@@ -82,7 +82,9 @@ public class Central {
         garaje.getPuerta().cerrarPuerta();
         } else {System.out.println("La puerta ya está bajada");}
     }
-
+    public void consultarEstadoGaraje(){
+        garaje.consultarEstadoGaraje();
+    }
     //Dormitorio
     public void encenderLucesDormitorio() {
         dormitorio.getLuces().encenderLuces();
@@ -166,7 +168,6 @@ public class Central {
     public static int comprobarUsuario(Usuario user) {
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).equals(user)) {
-                System.out.println("Usuario ingresado correctamente");
                 return 1;
             } else {
                 System.out.println("Usuario/Contraseña incorrecta");
@@ -175,9 +176,28 @@ public class Central {
         }
         return -1;
     }
+    public void consultarEstadoVivienda(){
+        System.out.println("---->Salon<----");
+        salon.consusltarEstado();
+        System.out.println("---->Despacho<----");
+        despacho.consusltarEstado();
+        System.out.println("---->Dormitorio<----");
+        dormitorio.consusltarEstado();
+        System.out.println("---->Garaje<----");
+        garaje.consultarEstadoGaraje();
+    }
+    public void apagadoGeneral(){
+        this.despacho.getLuces().setEstado(false);
+        this.dormitorio.getLuces().setEstado(false);
+        this.salon.getLuces().setEstado(false);
+    }
+    public void apagadoEco(){
+        this.despacho.getLuces().apagadoEco(despacho);
+        this.dormitorio.getLuces().apagadoEco(dormitorio);
+        this.salon.getLuces().apagadoEco(salon);
+    }
 
     public void ejecutarComando(Comando comando, Central centralita) {
-      
         switch (comando) {
             case APAGAR_SISTEMA:
                 centralita.apagarSistema();
@@ -286,17 +306,20 @@ public class Central {
                 break;
                 
             case APAGADO_GENERAL:
-                Luz.apagadoGeneral();
+                centralita.apagadoGeneral();
                 System.out.println("Luces apagadas");
                 break;
             case APAGADO_ECO:
-                Luz.apagadoEco(salon);
-                Luz.apagadoEco(dormitorio);
-                Luz.apagadoEco(despacho);
+               centralita.apagadoEco();
                 break;
                 
             case CONSULTAR_LUCES:
-                Luz.consultarEstado();
+                System.out.println("---->Salon<----");
+                salon.getLuces().consultarEstado();
+                System.out.println("---->Despacho<----");
+                despacho.getLuces().consultarEstado();
+                System.out.println("---->Dormitorio<----");
+                dormitorio.getLuces().consultarEstado();
                 break;
                 
                 
@@ -311,6 +334,16 @@ public class Central {
             case CONSULTAR_ESTADO_DORMITORIO:
                 centralita.consultarEstadoDormitorio();
                 break;
+                
+            case CONSULTAR_ESTADO_GARAJE:
+                centralita.consultarEstadoGaraje();
+                break;
+                
+            case CONSULTAR_ESTADO_VIVIENDA:
+                centralita.consultarEstadoVivienda();
+                break;
+             
+            
             
         }
     }
