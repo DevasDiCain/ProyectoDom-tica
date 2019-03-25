@@ -58,10 +58,13 @@ public class Luz {//Las luces que contendrán las habitaciones de la casa
         this.estado = false;
     }
     //Método que apaga las luces de las estancias que tengan las persianas abiertas entre las 08:00 y las 16:00
-    public  void apagadoEco(HabitacionesGenericas aApagar) {
+    public static void apagadoEco(HabitacionesGenericas aApagar) {
         LocalTime primeraHora = LocalTime.of(8, 00);
         LocalTime segundaHora = LocalTime.of(18, 00);
-        if (primeraHora.isAfter(Reloj.hallarHora()) && segundaHora.isBefore(Reloj.hallarHora())) {
+        System.out.println("Apagado Eco");
+        if (Reloj.hallarHora().isAfter(primeraHora) && Reloj.hallarHora().isBefore(segundaHora)) {
+            System.out.println("Dentro de "
+                    + "Rango horario");
             if (aApagar.getPersianas().getPosicion().equals(posicionPersiana.ABIERTA) || aApagar.getPersianas().getPosicion().equals(posicionPersiana.MEDIA_ALTURA)) {
                   aApagar.getLuces().apagarLuces();
             }

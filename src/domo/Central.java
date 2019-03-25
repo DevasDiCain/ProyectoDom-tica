@@ -160,9 +160,9 @@ public class Central {
         this.salon.getLuces().setEstado(false);
     }
     public void apagadoEco(){
-        this.despacho.getLuces().apagadoEco(despacho);
-        this.dormitorio.getLuces().apagadoEco(dormitorio);
-        this.salon.getLuces().apagadoEco(salon);
+        Luz.apagadoEco(despacho);
+        Luz.apagadoEco(dormitorio);
+        Luz.apagadoEco(salon);
     }
     
     //Usuarios

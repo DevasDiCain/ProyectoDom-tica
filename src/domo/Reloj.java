@@ -42,9 +42,9 @@ public class Reloj {//El reloj servirá para el apagado eco y para futuras funci
   }
     
   public static LocalTime hallarHora(){
-    return  Reloj.hora=LocalTime.now();
+    return  LocalTime.now();
   }
   public static LocalDate hallarFecha(){
-     return Reloj.fecha=LocalDate.now();
+     return LocalDate.now();
   }
 }
